@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Datar")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1e445e744537a2cf38dab5f4de72b0c3571b2cbe")]
 [assembly: System.Reflection.AssemblyProductAttribute("Datar")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Datar")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
