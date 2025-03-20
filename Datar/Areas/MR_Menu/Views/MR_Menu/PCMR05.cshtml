@@ -1,0 +1,441 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quality Objectives 2024</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        @@page {
+            size: A4;
+            margin: 20mm;
+        }
+        /* Print styles */
+        @@media print {
+            .page-break{
+                page-break-before: always;
+            }
+
+        }
+
+
+        body {
+            font-family: 'Cambria Math';
+            margin: 20px;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        .container-box {
+            max-width: 900px;
+            background: white;
+            border: 2px solid #000;
+            padding: 20px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: Arial, sans-serif;
+            margin-bottom: 20px;
+        }
+
+
+
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        h2 {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        h3 {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        h5 {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+
+        .underline {
+            text-decoration: underline;
+        }
+
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+            vertical-align: middle;
+        }
+
+
+        th {
+            text-align: center;
+            border: 1px solid black;
+            padding: 8px;
+            vertical-align: middle;
+            word-break: break-word;
+            white-space: normal;
+            overflow-wrap: break-word;
+        }
+
+        .company-title {
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            white-space: nowrap;
+            word-spacing:   5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Close Button -->
+    <a asp-area="MST_Company" id="top-logo" asp-controller="MST_Company" asp-action="CompanyDetail" class="btn btn-link position-absolute top-0 end-0 m-3 text-dark">
+        <i class="bi bi-x-lg fs-4"></i>
+    </a>
+    <button id="downloadPdf" class="btn btn-primary my-3">Download PDF</button>
+    <!-- Page Title -->
+    <h1 class="text-black">PCMR05</h1>
+    <div class="container my-5">
+        <div class="container-box mx-auto p-4" id="pdf-content">
+
+            <!-- Table -->
+            <table class="table table-hover border" >
+
+
+                <tr>
+                    <th colspan="2" class="company-title">BLIZZARD CERAMICA LLP</th>
+                    <th colspan="2" class="company-title">PROCEDURE</th>
+                </tr>
+                <tr>
+                    <td colspan="2">Department : MR</td>
+                    <td colspan="2">Doc. No. : PC MR 05</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Subject : Control of documents</td>
+                    <td colspan="2">Rev. No. & Date : 01 / 01.08.2024</td>
+                </tr>
+                <tr>
+                    <td colspan="2">ISO-9001 Clause No. : 7.5.3</td>
+                    <td colspan="2">Page No. : 1 of 3</td>
+                </tr>
+            </table>
+
+            <div class="content">
+
+                <h2>
+                    1.	PURPOSE  &nbsp; :
+                </h2>
+                <p style="margin-left:30px;">
+                    The purpose of this procedure is to describe the method for ensuring that the product that does not conform to
+                    specified requirement is identified and controlled to prevent form unintended use or delivery. This control shall
+                    provide for identification, documentation, evaluation, segregation and disposition of non-conforming product and
+                    for notification to the functions concerned.
+                </p>
+
+                <h2>
+                    2.	SCOPE  &nbsp; :
+                </h2>
+                <p style="margin-left:30px;">Applicable to all non-conforming products. </p>
+                <h2>3.	RESPONSIBILITY &nbsp;&nbsp;:  </h2>
+
+                <p style="margin-left:30px;">
+                    QC supervisor, Production Supervisor, store incharge and Purchase officer is responsible to implement & maintain this procedure in their respective area.
+                    PARTNER &nbsp;has an authority for final decision and disposition of non-conforming material.
+
+                </p>
+
+                <h2>
+
+                    4.	PROCEDURE  &nbsp; :
+                </h2>
+                <p style="margin-left:30px;">
+                    Non-conforming product means, which is not as per the specified requirement.
+                </p>
+                <h3 style="margin-left:30px;">
+                    4.1  NON-CONFORMING &nbsp; &nbsp; PRODUCT :
+                </h3>
+                <p style="margin-left:50px;">
+                    Non-conforming product observed at any stages, like during receiving inspection, in-process inspection and final
+                    inspection are handled by one of the following ways.
+                </p>
+
+                <h3 style="margin-left:30px;">
+                    4.2	RECEIVING STAGE &nbsp;:
+                </h3>
+                <h5 style="margin-left:50px;">4.2.1	RAW &nbsp; MATERIAL &nbsp;&nbsp; INSPECTION &nbsp;&nbsp;& TESTING :</h5>
+                <p style="margin-left:70px;">  RM shall be divided into OK, Rejection and Segregation or accepted under deviation.  </p>
+                <h5 style="margin-left:50px;">a)	REJECTION &nbsp;:</h5><br />
+                <p style="margin-left:70px;">	Incase of rejection, QC &nbsp; Supervisor shall identify the rejected material as per process chart, doc. No. PCQC01 and send it to rejected area. QC &nbsp;Supervisor shall inform to purchase officer. Purchase officer shall send back the rejected material to concerned supplier and informed to him for necessary corrective action.</p>
+
+                <h5 style="margin-left:50px;">4.2.2	SUPPLIER’S &nbsp;&nbsp; SUPPLIED &nbsp;&nbsp;PRODUCT &nbsp;&nbsp;(CRITICAL &nbsp;&nbsp; ITEMS &nbsp;)</h5>
+                <h5 style="margin-left:50px;"> a) REJECTION &nbsp; :</h5>
+                <p style="margin-left:70px;">In case of items found rejected, store incharge shall identify it and keeps at rejected area. Store incharge shall inform to concerned supplier. </p>
+
+                <h3 style="margin-left:50px;">4.3	INPROCESS INSPECTION :</h3>
+                <h5 style="margin-left:50px;">a)	REWORK &nbsp; :</h5>
+                <p style="margin-left:70px;">
+                    In case of material found rework, the same shall be kept a side by identifying the reason for rework. At the end of the day, the same shall be reworked.
+                </p>
+
+                <table>
+                    <tr>
+                        <th colspan="3" width="35%">Prepared By</th>
+                        <th colspan="3" width="35%">Approved By</th>
+                        <th rowspan="3"></th>
+                    </tr>
+                    <tr>
+                        <td colspan="3" width="35%"></td>
+                        <td colspan="3" width="35%"></td>
+                    </tr>
+                    <tr>
+                        <th colspan="3" width="35%">MR</th>
+                        <th colspan="3" width="35%">PARTNER</th>
+                    </tr>
+
+
+                </table>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+
+    <div class="container my-5" id="pdf-content">
+        <div class="container-box mx-auto p-4">
+            <table>
+                <tr>
+                    <th colspan="2" class="company-title">BLIZZARD CERAMICA LLP</th>
+                    <th colspan="2" class="company-title">PROCEDURE</th>
+                </tr>
+                <tr>
+                    <td colspan="2">Department : MR</td>
+                    <td colspan="2">Doc. No. : PC MR 05</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Subject : Control of documents</td>
+                    <td colspan="2">Rev. No. & Date : 01 / 01.08.2024</td>
+                </tr>
+                <tr>
+                    <td colspan="2">ISO-9001 Clause No. : 7.5.3</td>
+                    <td colspan="2">Page No. : 2 of 3</td>
+                </tr>
+            </table>
+
+            <div class="content">
+
+
+                <h5 style="margin-left:50px;">
+
+                    b)	REJECTION &nbsp;:
+                </h5>
+
+                <p style="margin-left:70px;">
+                    In case of material found rejected, the same shall be recorded in setup approval & inprocess inspection report form no FQC02 at the end of day or shift. Rejected shall be identified and kept at rejection area.
+                </p>
+                <h3 style="margin-left:30px;">4.4	FINAL INSPECTION : </h3><br />
+                <p style="margin-left:50px;">
+                    The non-conformities observed during final inspection is divided into rework, rejection and accepted under deviation.
+                </p>
+
+
+
+
+
+                <h5 style="margin-left:50px;">
+                    a)	REWORK &nbsp; :
+                </h5>
+                <p style="margin-left:70px;">
+                    Incase of needing rework, QC &nbsp; supervisor shall keep them in a rework area and identify with a flag of “ REWORK“.
+                    After doing rework, the same shall be re-inspected; QC &nbsp;supervisor shall keep the record in final inspection report,
+                    form no. FQC03.
+
+                </p>
+                <h5 style="margin-left:50px;">
+
+                    b)	REJECTION &nbsp;:
+                </h5>
+
+                <p style="margin-left:70px;">
+                    Incase of rejected, the same shall be identified by red color & kept at rejected area. QC supervisor shall keep the
+                    record of the same in final inspection report (critical parameters), form no. FQC03.
+                </p>
+
+                <h3 style="margin-left:30px;"> 4.5	ACCEPTED &nbsp; UNDER &nbsp; DEVIATION :</h3>
+                <h5 style="margin-left:50px;">
+                    4.5.1
+                </h5>
+                <p style="margin-left:70px;">
+                    Incase of material can be used with or without repair by concession; originator department shall inform and hand
+                    over to PARTNER.
+                </p>
+                <h5 style="margin-left:50px;">
+                    4.5.2
+                </h5>
+                <p style="margin-left:70px;">
+                    PARTNER shall verify the same and gets approval from sales. PARTNER &nbsp; shall review the nature of fault and purpose of
+                    the product and approve the same.
+                </p>
+                <h5 style="margin-left:50px;">
+                    4.5.3
+                </h5>
+                <p style="margin-left:70px;">
+                    After getting concession, the same material shall be properly identified and used for further process.
+                </p>
+                <h5 style="margin-left:50px;">
+                    4.5.4
+                </h5>
+
+                <p style="margin-left:70px;">
+                    Whenever required by the contract, the proposed use or repair of product, which does not confirm to specified
+                    requirements, PARTNER &nbsp; shall inform to marketing officer for getting approval from the customer. In that case,
+                    material shall be identified properly and used for further process only after getting approval from the customer.
+                </p>
+                <h5 style="margin-left:50px;">
+                    4.5.5
+                </h5>
+                <p style="margin-left:70px;">
+                    Incase of customer does not give the deviation; PARTNER &nbsp; shall decide to send for alternative application.
+                    In that case PARTNER &nbsp;shall inform to marketing officer to store the material with proper identification and
+                    dispatched as per requirement.
+                </p>
+
+                <h3 style="margin-left:30px;">
+                    4.6	NONCONFORMING &nbsp; MATERIAL &nbsp;RETURNED &nbsp;FROM &nbsp; THE CUSTOMER :
+                </h3>
+                <p style="margin-left:50px;">
+                    Incase of non-conforming material returned from the customer, QC &nbsp; supervisor shall analyze the same and follow the steps as given in para 4.5 or para 6. The results are recorded in corrective action report, form no. F MR 09.
+                </p>
+
+                <table>
+                    <tr>
+                        <th colspan="3" width="35%">Prepared By</th>
+                        <th colspan="3" width="35%">Approved By</th>
+                        <th rowspan="3"></th>
+                    </tr>
+                    <tr>
+                        <td colspan="3" width="35%"></td>
+                        <td colspan="3" width="35%"></td>
+                    </tr>
+                    <tr>
+                        <th colspan="3" width="35%">MR</th>
+                        <th colspan="3" width="35%">PARTNER</th>
+                    </tr>
+
+
+                </table>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <div class="container my-5" id="pdf-content">
+        <div class="container-box mx-auto p-4">
+            <table>
+                <tr>
+                    <th colspan="2" class="company-title">BLIZZARD CERAMICA LLP</th>
+                    <th colspan="2" class="company-title">PROCEDURE</th>
+                </tr>
+                <tr>
+                    <td colspan="2">Department : MR</td>
+                    <td colspan="2">Doc. No. : PC MR 03</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Subject : Control of documents</td>
+                    <td colspan="2">Rev. No. & Date : 01 / 01.08.2024</td>
+                </tr>
+                <tr>
+                    <td colspan="2">ISO-9001 Clause No. : 7.5.3</td>
+                    <td colspan="2">Page No. : 3 of 3</td>
+                </tr>
+            </table>
+
+
+            <div class="content">
+                <h2>Reference :</h2><br /><br />
+                <h2>Records :</h2>
+                <ol>
+                    <li>Ball Mill Loading Report				: F QC 01</li>
+                    <li>Ball Mill Check Report				: F QC 02</li>
+                    <li>Silo Stock Report					: F QC 03</li>
+                    <li>Press Parameters Record				: F QC 04</li>
+                    <li>Five Layer Horizontal Parameters Record		: F QC 05</li>
+                    <li>Kiln Parameters Record ( Temp.)			: F QC 06</li>
+                    <li>Kiln Parameters Record				: F QC 07</li>
+                    <li>Glaze Line Parameters Record			: F QC 08</li>
+                    <li>Shorting Report					: F QC 09</li>
+                    <li>Online quality Control Report			: F QC 11</li>
+                    <li>Spray Dayir Data Report				: F QC 12</li>
+                    <li>Row Material Report				: F QC 13</li>
+                </ol>
+                <table>
+                    <tr>
+                        <th colspan="3" width="35%">Prepared By</th>
+                        <th colspan="3" width="35%">Approved By</th>
+                        <th rowspan="3"></th>
+                    </tr>
+                    <tr>
+                        <td colspan="3" width="35%"></td>
+                        <td colspan="3" width="35%"></td>
+                    </tr>
+                    <tr>
+                        <th colspan="3" width="35%">MR</th>
+                        <th colspan="3" width="35%">PARTNER</th>
+                    </tr>
+
+
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("downloadPdf").addEventListener("click", () => {
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF("p", "mm", "a4");
+
+                // Get elements to hide
+                const btn = document.getElementById("downloadPdf");
+                const logo = document.getElementById("top-logo");
+
+                // Temporarily hide elements
+                if (btn) btn.style.display = "none";
+                if (logo) logo.style.display = "none";
+
+                pdf.html(document.body, {
+                    callback: function (pdf) {
+                        pdf.save("PCMR05.pdf");
+
+                        // Restore elements after PDF is generated
+                        if (btn) btn.style.display = "block";
+                        if (logo) logo.style.display = "block";
+                    },
+
+                    width: 210, // Full A4 width
+                    windowWidth: 1075 // Adjust scaling
+                });
+            });
+        });
+    </script>
+
+
+    <!-- Include jsPDF and html2canvas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+
+</body>

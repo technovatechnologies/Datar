@@ -1,0 +1,604 @@
+﻿@using System.Data;
+@model DataTable;
+@{
+    ViewData["Title"] = "Company Dashboard";
+    string selectedCompanyID = Context.Request.Query["CompanyID"];
+    DataRow selectedCompany = Model.Rows.Cast<DataRow>().FirstOrDefault(row => row["CompanyID"].ToString() == selectedCompanyID);
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Dashboard</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+
+
+    <style>
+        .navbar {
+            background-color: #5F4C4C;
+            padding: 10px 20px;
+        }
+
+        .navbar-brand {
+            color: white;
+            font-weight: bold;
+        }
+
+        .navbar-nav .nav-link {
+            color: white !important;
+        }
+
+        .navbar-nav {
+            flex-grow: 1;
+        }
+
+        .company-name {
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Custom styling for the dropdown */
+        .dropdown-menu {
+            width: 600px; /* Set appropriate width */
+            background-color: whitesmoke; /* Dark background */
+            padding: 15px;
+        }
+
+        /* Use flexbox for column layout */
+        .dropdown-content {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Style each column */
+        .dropdown-column {
+            flex: 1;
+            padding: 10px;
+            color: black;
+        }
+
+        /* Dropdown item styles */
+        .dropdown-item {
+            color: #5F4C4C;
+            display: block;
+            padding: 5px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+            .dropdown-item:hover {
+                color:gray;
+            }
+
+        /* Headings for each category */
+        .dropdown-heading {
+            font-weight: bold;
+            margin-bottom: 5px;
+            border-bottom: 1px solid #5F4C4C;
+            padding-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+
+            <!-- Navigation Menu (Aligned Left) -->
+            <div class="collapse justify-content-center navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" id="dropdownToggle" data-bs-toggle="dropdown">MR</a>
+                        <ul class="dropdown-menu">
+                            <div class="dropdown-content">
+                                <!-- PC Category -->
+                                <div class="dropdown-column">
+                                    <div class="dropdown-heading">PC Files</div>
+                                    <a asp-area="MR_Menu" asp-controller="MR_Menu" asp-action="PCMR01" class="dropdown-item">PCMR01</a>
+                                    <a asp-area="MR_Menu" asp-controller="MR_Menu" asp-action="PCMR02" class="dropdown-item">PCMR02</a>
+                                    <a asp-area="MR_Menu" asp-controller="MR_Menu" asp-action="PCMR03" class="dropdown-item">PCMR03</a>
+                                    <a asp-area="MR_Menu" asp-controller="MR_Menu" asp-action="PCMR04" class="dropdown-item">PCMR04</a>
+                                    <a asp-area="MR_Menu" asp-controller="MR_Menu" asp-action="PCMR05" class="dropdown-item">PCMR05</a>
+                                    <a asp-area="MR_Menu" asp-controller="MR_Menu" asp-action="PCMR06" class="dropdown-item">PCMR06</a>
+                                    <a asp-area="MR_Menu" asp-controller="MR_Menu" asp-action="PCMR07" class="dropdown-item">PCMR07</a>
+                                    <a asp-area="MR_Menu" asp-controller="MR_Menu" asp-action="PCMR08" class="dropdown-item">PCMR08</a>
+
+                                </div>
+                                <!-- DM Category -->
+                                <div class="dropdown-column">
+                                    <div class="dropdown-heading">DM Files</div>
+                                    <a asp-area="MR_Menu" asp-controller="MR_Menu" asp-action="DMR01" class="dropdown-item">DMR01</a>
+                                    <a asp-area="MR_Menu" asp-controller="MR_Menu" asp-action="DMR02" class="dropdown-item">DMR02</a>
+                                    <a asp-area="MR_Menu" asp-controller="MR_Menu" asp-action="DMR03" class="dropdown-item">DMR03</a>
+                                    <a asp-area="MR_Menu" asp-controller="MR_Menu" asp-action="DMR04" class="dropdown-item">DMR04</a>
+                                    <a asp-area="MR_Menu" asp-controller="MR_Menu" asp-action="DMR05" class="dropdown-item">DMR05</a>
+                                    <a asp-area="MR_Menu" asp-controller="MR_Menu" asp-action="DMR06" class="dropdown-item">DMR06</a>
+                                    <a asp-area="MR_Menu" asp-controller="MR_Menu" asp-action="DMR07" class="dropdown-item">DMR07</a>
+                                    <a asp-area="MR_Menu" asp-controller="MR_Menu" asp-action="DMR08" class="dropdown-item">DMR08</a>
+                                    <a asp-area="MR_Menu" asp-controller="MR_Menu" asp-action="DMR09" class="dropdown-item">DMR09</a>
+                                    <a asp-area="MR_Menu" asp-controller="MR_Menu" asp-action="DMR10" class="dropdown-item">DMR10</a>
+                                    <a asp-area="MR_Menu" asp-controller="MR_Menu" asp-action="DMR11" class="dropdown-item">DMR11</a>
+                                    <a asp-area="MR_Menu" asp-controller="MR_Menu" asp-action="DMR12" class="dropdown-item">DMR12</a>
+                                    <a asp-area="MR_Menu" asp-controller="MR_Menu" asp-action="DMR13" class="dropdown-item">DMR13</a>
+                                </div>
+
+                                <!-- FM Category -->
+                                <div class="dropdown-column">
+                                    <div class="dropdown-heading">FM Files</div>
+                                    <a asp-area="MR_Menu" asp-controller="MR_Menu" asp-action="FMR01" class="dropdown-item">FMR01</a>
+                                    <a asp-area="MR_Menu" asp-controller="MR_Menu" asp-action="FMR02" class="dropdown-item">FMR02</a>
+                                    <a asp-area="MR_Menu" asp-controller="MR_Menu" asp-action="FMR03" class="dropdown-item">FMR03</a>
+                                    <a asp-area="MR_Menu" asp-controller="MR_Menu" asp-action="FMR04" class="dropdown-item">FMR04</a>
+                                    <a asp-area="MR_Menu" asp-controller="MR_Menu" asp-action="FMR05" class="dropdown-item">FMR05</a>
+                                    <a asp-area="MR_Menu" asp-controller="MR_Menu" asp-action="FMR06" class="dropdown-item">FMR06</a>
+                                    <a asp-area="MR_Menu" asp-controller="MR_Menu" asp-action="FMR07" class="dropdown-item">FMR07</a>
+                                    <a asp-area="MR_Menu" asp-controller="MR_Menu" asp-action="FMR08" class="dropdown-item">FMR08</a>
+                                </div>
+
+                                
+                            </div>
+
+                        </ul>
+                    </li>
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" id="dropdownToggle" data-bs-toggle="dropdown">HR</a>
+                        <ul class="dropdown-menu">
+                            <div class="dropdown-content">
+                                <!-- PC Category -->
+                                <div class="dropdown-column">
+                                    <div class="dropdown-heading">PCMR Files</div>
+                                    <a asp-area="HR_Menu" asp-controller="HR_Menu" asp-action="PCMR03" class="dropdown-item">PCMR03</a>
+                                </div>
+                                <!-- DH Category -->
+                                <div class="dropdown-column">
+                                    <div class="dropdown-heading">DHR Files</div>
+                                    <a asp-area="HR_Menu" asp-controller="HR_Menu" asp-action="DHR01" class="dropdown-item">DHR01</a>
+                                    <a asp-area="HR_Menu" asp-controller="HR_Menu" asp-action="DHR02" class="dropdown-item">DHR02</a>
+                                </div>
+
+                                <!-- FH Category -->
+                                <div class="dropdown-column">
+                                    <div class="dropdown-heading">FHR Files</div>
+                                    <a asp-area="HR_Menu" asp-controller="HR_Menu" asp-action="FHR01" class="dropdown-item">FHR01</a>
+                                </div>
+
+                               
+                            </div>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" id="dropdownToggle" data-bs-toggle="dropdown">MR_MenuWord</a>
+                        <ul class="dropdown-menu">
+                            <div class="dropdown-content">
+                                <!-- DH Category -->
+                                <div class="dropdown-column">
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P01" class="dropdown-item">P01</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P02" class="dropdown-item">P02</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P03" class="dropdown-item">P03</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P04" class="dropdown-item">P04</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P05" class="dropdown-item">P05</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P06" class="dropdown-item">P06</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P07" class="dropdown-item">P07</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P08" class="dropdown-item">P08</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P09" class="dropdown-item">P09</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P10" class="dropdown-item">P10</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P11" class="dropdown-item">P11</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P12" class="dropdown-item">P12</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P13" class="dropdown-item">P13</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P14" class="dropdown-item">P14</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P15" class="dropdown-item">P15</a>
+                                
+                                   
+                                </div>
+
+                                <!-- FH Category -->
+                                <div class="dropdown-column">
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P16" class="dropdown-item">P16</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P17" class="dropdown-item">P17</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P18" class="dropdown-item">P18</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P19" class="dropdown-item">P19</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P20" class="dropdown-item">P20</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P21" class="dropdown-item">P21</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P22" class="dropdown-item">P22</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P23" class="dropdown-item">P23</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P24" class="dropdown-item">P24</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P25" class="dropdown-item">P25</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P26" class="dropdown-item">P26</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P27" class="dropdown-item">P27</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P28" class="dropdown-item">P28</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P29" class="dropdown-item">P29</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P30" class="dropdown-item">P30</a>
+                     
+                                
+                                </div>
+
+                                <!-- FH Category -->
+                                <div class="dropdown-column">
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P31" class="dropdown-item">P31</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P32" class="dropdown-item">P32</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P33" class="dropdown-item">P33</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P34" class="dropdown-item">P34</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P35" class="dropdown-item">P35</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P36" class="dropdown-item">P36</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P37" class="dropdown-item">P37</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P38" class="dropdown-item">P38</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P39" class="dropdown-item">P39</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P40" class="dropdown-item">P40</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P41" class="dropdown-item">P41</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P42" class="dropdown-item">P42</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P43" class="dropdown-item">P43</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P44" class="dropdown-item">P44</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P45" class="dropdown-item">P45</a>
+
+
+                                </div>
+
+                                <!-- FH Category -->
+                                <div class="dropdown-column">
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P46" class="dropdown-item">P46</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P47" class="dropdown-item">P47</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P48" class="dropdown-item">P48</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P49" class="dropdown-item">P49</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P50" class="dropdown-item">P50</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P51" class="dropdown-item">P51</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P52" class="dropdown-item">P52</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P53" class="dropdown-item">P53</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P54" class="dropdown-item">P54</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P55" class="dropdown-item">P55</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P56" class="dropdown-item">P56</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P57" class="dropdown-item">P57</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P58" class="dropdown-item">P58</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P59" class="dropdown-item">P59</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P60" class="dropdown-item">P60</a>
+
+
+                                </div>
+
+                                <!-- FH Category -->
+                                <div class="dropdown-column">
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P61" class="dropdown-item">P61</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P62" class="dropdown-item">P62</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P63" class="dropdown-item">P63</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P64" class="dropdown-item">P64</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P65" class="dropdown-item">P65</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P66" class="dropdown-item">P66</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P67" class="dropdown-item">P67</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P68" class="dropdown-item">P68</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P69" class="dropdown-item">P69</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P70" class="dropdown-item">P70</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P71" class="dropdown-item">P71</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P72" class="dropdown-item">P72</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P73" class="dropdown-item">P73</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P74" class="dropdown-item">P74</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P75" class="dropdown-item">P75</a>
+
+
+                                </div>
+
+
+                                <!-- PC Category -->
+                                <div class="dropdown-column">                                  
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P76" class="dropdown-item">P76</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P77" class="dropdown-item">P77</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P78" class="dropdown-item">P78</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P79" class="dropdown-item">P79</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="QP" class="dropdown-item">QUALITY POLICY</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="QO" class="dropdown-item">QUALITY OBJECTIVES</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="AnnexureB" class="dropdown-item">AMENDMENT RECORD</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="AnnexureC" class="dropdown-item">ABBREVIATIONS</a>
+                                    <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="AnnexureD" class="dropdown-item">COMPANY PROFILE</a>
+
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" id="dropdownToggle" data-bs-toggle="dropdown">Marketing</a>
+                        <ul class="dropdown-menu">
+                            <div class="dropdown-content">
+                                <!-- PC Category -->
+                                <div class="dropdown-column">
+                                    <div class="dropdown-heading">PCMK Files</div>
+                                    <a asp-area="Marketing_Menu" asp-controller="Marketing_Menu" asp-action="PCMK01" class="dropdown-item">PCMK01</a>
+                                    <a asp-area="Marketing_Menu" asp-controller="Marketing_Menu" asp-action="PCMK02" class="dropdown-item">PCMK02</a>
+
+                                </div>
+                                <!-- DH Category -->
+                                <div class="dropdown-column">
+                                    <div class="dropdown-heading">DMK Files</div>
+                                    <a asp-area="Marketing_Menu" asp-controller="Marketing_Menu" asp-action="DMK01" class="dropdown-item">DMK01</a>
+                                    <a asp-area="Marketing_Menu" asp-controller="Marketing_Menu" asp-action="DMK02" class="dropdown-item">DMK02</a>
+
+                                    </div>
+
+                                <!-- FMK Category -->
+                                <div class="dropdown-column">
+                                    <div class="dropdown-heading">FMK Files</div>
+                                    <a asp-area="Marketing_Menu" asp-controller="Marketing_Menu" asp-action="FMK01" class="dropdown-item">FMK01</a>
+                                    <a asp-area="Marketing_Menu" asp-controller="Marketing_Menu" asp-action="FMK02" class="dropdown-item">FMK02</a>
+                                    <a asp-area="Marketing_Menu" asp-controller="Marketing_Menu" asp-action="FMK03" class="dropdown-item">FMK03</a>
+                                    <a asp-area="Marketing_Menu" asp-controller="Marketing_Menu" asp-action="FMK04" class="dropdown-item">FMK04</a>
+                                    <a asp-area="Marketing_Menu" asp-controller="Marketing_Menu" asp-action="FMK05" class="dropdown-item">FMK05</a>
+
+                                </div>
+
+                                
+                            </div>
+                        </ul>
+                    </li>
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" id="dropdownToggle" data-bs-toggle="dropdown">Purchase</a>
+                        <ul class="dropdown-menu">
+                            <div class="dropdown-content">
+                                <!-- PC Category -->
+                                <div class="dropdown-column">
+                                    <div class="dropdown-heading">PC Files</div>
+                                    <a asp-area="Purchase_Menu" asp-controller="Purchase_Menu" asp-action="PCPR01" class="dropdown-item">PCPR01</a>
+
+                                </div>
+                                <!-- DH Category -->
+                                <div class="dropdown-column">
+                                    <div class="dropdown-heading">DP Files</div>
+                                    <a asp-area="Purchase_Menu" asp-controller="Purchase_Menu" asp-action="DPR01" class="dropdown-item">DPR01</a>
+
+                                </div>
+
+                                <!-- FMK Category -->
+                                <div class="dropdown-column">
+                                    <div class="dropdown-heading">FP Files</div>
+                                    <a asp-area="Purchase_Menu" asp-controller="Purchase_Menu" asp-action="FPR01" class="dropdown-item">FPR01</a>
+                                    <a asp-area="Purchase_Menu" asp-controller="Purchase_Menu" asp-action="FPR02" class="dropdown-item">FPR02</a>
+                                    <a asp-area="Purchase_Menu" asp-controller="Purchase_Menu" asp-action="FPR03" class="dropdown-item">FPR03</a>
+
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" id="dropdownToggle" data-bs-toggle="dropdown">Maintenance</a>
+                        <ul class="dropdown-menu">
+                            <div class="dropdown-content">
+                                <!-- PC Category -->
+                                <div class="dropdown-column">
+                                    <div class="dropdown-heading">PC Files</div>
+                                    <a asp-area="Maintenance_Menu" asp-controller="Maintenance_Menu" asp-action="PCMT01" class="dropdown-item">PCMT01</a>
+
+                                </div>
+                                <!-- DH Category -->
+                                <div class="dropdown-column">
+                                    <div class="dropdown-heading">DP Files</div>
+                                    <a asp-area="Maintenance_Menu" asp-controller="Maintenance_Menu" asp-action="DMT01" class="dropdown-item">DMT01</a>
+                                    <a asp-area="Maintenance_Menu" asp-controller="Maintenance_Menu" asp-action="DMT02" class="dropdown-item">DMT02</a>
+
+                                </div>
+
+                                <!-- FMK Category -->
+                                <div class="dropdown-column">
+                                    <div class="dropdown-heading">FP Files</div>
+                                    <a asp-area="Maintenance_Menu" asp-controller="Maintenance_Menu" asp-action="FMT01" class="dropdown-item">FMT01</a>
+                                    <a asp-area="Maintenance_Menu" asp-controller="Maintenance_Menu" asp-action="FMT02" class="dropdown-item">FMT02</a>
+                                   
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" id="dropdownToggle" data-bs-toggle="dropdown">Maintenance1</a>
+                        <ul class="dropdown-menu">
+                            <div class="dropdown-content">
+                                <!-- PC Category -->
+                                <div class="dropdown-column">
+                                    <div class="dropdown-heading">BM Files</div>
+                                    <a asp-area="Maintenance1_Menu" asp-controller="Maintenance1_Menu" asp-action="BM01" class="dropdown-item">BM01</a>
+                                    <a asp-area="Maintenance1_Menu" asp-controller="Maintenance1_Menu" asp-action="BM02" class="dropdown-item">BM02</a>
+                                    <a asp-area="Maintenance1_Menu" asp-controller="Maintenance1_Menu" asp-action="BM03" class="dropdown-item">BM03</a>
+                                    <a asp-area="Maintenance1_Menu" asp-controller="Maintenance1_Menu" asp-action="BM04" class="dropdown-item">BM04</a>
+                                    <a asp-area="Maintenance1_Menu" asp-controller="Maintenance1_Menu" asp-action="BM05" class="dropdown-item">BM05</a>
+                                    <a asp-area="Maintenance1_Menu" asp-controller="Maintenance1_Menu" asp-action="BM06" class="dropdown-item">BM06</a>
+                                    <a asp-area="Maintenance1_Menu" asp-controller="Maintenance1_Menu" asp-action="BM07" class="dropdown-item">BM07</a>
+                                    <a asp-area="Maintenance1_Menu" asp-controller="Maintenance1_Menu" asp-action="BM08" class="dropdown-item">BM08</a>
+                                    <a asp-area="Maintenance1_Menu" asp-controller="Maintenance1_Menu" asp-action="BM09" class="dropdown-item">BM09</a>
+                                    <a asp-area="Maintenance1_Menu" asp-controller="Maintenance1_Menu" asp-action="BM10" class="dropdown-item">BM10</a>
+
+                                </div>
+                                <!-- DH Category -->
+                                <div class="dropdown-column">
+                                    <div class="dropdown-heading">DRY/GL/KL Files</div>
+                                    <a asp-area="Maintenance1_Menu" asp-controller="Maintenance1_Menu" asp-action="DRY01" class="dropdown-item">DRY01</a>
+                                    <a asp-area="Maintenance1_Menu" asp-controller="Maintenance1_Menu" asp-action="GL01" class="dropdown-item">GL01</a>
+                                    <a asp-area="Maintenance1_Menu" asp-controller="Maintenance1_Menu" asp-action="KL01" class="dropdown-item">KL01</a>
+
+
+                                </div>
+
+                              
+
+                                 <!-- FMK Category -->
+                                <div class="dropdown-column">
+                                    <div class="dropdown-heading">HOP / HP Files</div>
+                                    <a asp-area="Maintenance1_Menu" asp-controller="Maintenance1_Menu" asp-action="HOP01" class="dropdown-item">HOP01</a>
+                                    <a asp-area="Maintenance1_Menu" asp-controller="Maintenance1_Menu" asp-action="HOP02" class="dropdown-item">HOP02</a>
+                                    <a asp-area="Maintenance1_Menu" asp-controller="Maintenance1_Menu" asp-action="HP01" class="dropdown-item">HP01</a>
+                                    <a asp-area="Maintenance1_Menu" asp-controller="Maintenance1_Menu" asp-action="HP02" class="dropdown-item">HP02</a>
+
+                                </div>
+                               
+
+                                <!-- FMK Category -->
+                                <div class="dropdown-column">
+                                    <div class="dropdown-heading">NM Files</div>
+                                    <a asp-area="Maintenance1_Menu" asp-controller="Maintenance1_Menu" asp-action="NM01" class="dropdown-item">NM01</a>
+                                    <a asp-area="Maintenance1_Menu" asp-controller="Maintenance1_Menu" asp-action="NM02" class="dropdown-item">NM02</a>
+                                    <a asp-area="Maintenance1_Menu" asp-controller="Maintenance1_Menu" asp-action="NM03" class="dropdown-item">NM03</a>
+
+                                </div>
+
+                                <!-- FMK Category -->
+                                <div class="dropdown-column">
+                                    <div class="dropdown-heading">PL / PP Files</div>
+                                    <a asp-area="Maintenance1_Menu" asp-controller="Maintenance1_Menu" asp-action="PL01" class="dropdown-item">PL01</a>
+                                    <a asp-area="Maintenance1_Menu" asp-controller="Maintenance1_Menu" asp-action="PL02" class="dropdown-item">PL02</a>
+                                    <a asp-area="Maintenance1_Menu" asp-controller="Maintenance1_Menu" asp-action="PL03" class="dropdown-item">PL03</a>
+                                    <a asp-area="Maintenance1_Menu" asp-controller="Maintenance1_Menu" asp-action="PL04" class="dropdown-item">PL04</a>
+                                    <a asp-area="Maintenance1_Menu" asp-controller="Maintenance1_Menu" asp-action="PP01" class="dropdown-item">PP01</a>
+                                    <a asp-area="Maintenance1_Menu" asp-controller="Maintenance1_Menu" asp-action="PP02" class="dropdown-item">PP02</a>
+
+                                </div>
+
+                               
+                                <!-- FMK Category -->
+                                <div class="dropdown-column">
+                                    <div class="dropdown-heading">SD/SL/SM/ST Files</div>
+                                    <a asp-area="Maintenance1_Menu" asp-controller="Maintenance1_Menu" asp-action="SD01" class="dropdown-item">SD01</a>
+                                    <a asp-area="Maintenance1_Menu" asp-controller="Maintenance1_Menu" asp-action="SL01" class="dropdown-item">SL01</a>
+                                    <a asp-area="Maintenance1_Menu" asp-controller="Maintenance1_Menu" asp-action="SM01" class="dropdown-item">SM01</a>
+                                    <a asp-area="Maintenance1_Menu" asp-controller="Maintenance1_Menu" asp-action="SM02" class="dropdown-item">SM02</a>
+                                    <a asp-area="Maintenance1_Menu" asp-controller="Maintenance1_Menu" asp-action="SM03" class="dropdown-item">SM03</a>
+                                    <a asp-area="Maintenance1_Menu" asp-controller="Maintenance1_Menu" asp-action="SM04" class="dropdown-item">SM04</a>
+                                    <a asp-area="Maintenance1_Menu" asp-controller="Maintenance1_Menu" asp-action="ST" class="dropdown-item">ST</a>
+
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" id="dropdownToggle" data-bs-toggle="dropdown">Store</a>
+                        <ul class="dropdown-menu">
+                            <div class="dropdown-content">
+                                <!-- PC Category -->
+                                <div class="dropdown-column">
+                                    <div class="dropdown-heading">PC Files</div>
+                                    <a asp-area="StoreST_Menu" asp-controller="StoreST_Menu" asp-action="PCST01" class="dropdown-item">PCST01</a>
+
+                                </div>
+                                <!-- DH Category -->
+                                <div class="dropdown-column">
+                                    <div class="dropdown-heading">DP Files</div>
+                                    <a asp-area="StoreST_Menu" asp-controller="StoreST_Menu" asp-action="DST01" class="dropdown-item">DST01</a>
+
+                                </div>
+
+                                <!-- FMK Category -->
+                                <div class="dropdown-column">
+                                    <div class="dropdown-heading">FP Files</div>
+                                    <a asp-area="StoreST_Menu" asp-controller="StoreST_Menu" asp-action="FST01" class="dropdown-item">FST01</a>
+                                    <a asp-area="StoreST_Menu" asp-controller="StoreST_Menu" asp-action="FST02" class="dropdown-item">FST02</a>
+                                    <a asp-area="StoreST_Menu" asp-controller="StoreST_Menu" asp-action="FST03" class="dropdown-item">FST03</a>
+
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+                    
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" id="dropdownToggle" data-bs-toggle="dropdown">QC</a>
+                        <ul class="dropdown-menu">
+                            <div class="dropdown-content">
+                                <!-- PC Category -->
+                                <div class="dropdown-column">
+                                    <div class="dropdown-heading">PCQC Files</div>
+                                    <a asp-area="QC_Menu" asp-controller="QC_Menu" asp-action="PCQC01" class="dropdown-item">PCQC01</a>
+                                    <a asp-area="QC_Menu" asp-controller="QC_Menu" asp-action="PCQC02" class="dropdown-item">PCQC02</a>
+
+                                </div>
+                                <!-- DH Category -->
+                                <div class="dropdown-column">
+                                    <div class="dropdown-heading">DQC Files</div>
+                                    <a asp-area="QC_Menu" asp-controller="QC_Menu" asp-action="DQC01" class="dropdown-item">DQC01</a>
+                                    <a asp-area="QC_Menu" asp-controller="QC_Menu" asp-action="DQC02" class="dropdown-item">DQC02</a>
+                                    <a asp-area="QC_Menu" asp-controller="QC_Menu" asp-action="DQC03" class="dropdown-item">DQC03</a>
+                                    <a asp-area="QC_Menu" asp-controller="QC_Menu" asp-action="DQC04" class="dropdown-item">DQC04</a>
+                                    <a asp-area="QC_Menu" asp-controller="QC_Menu" asp-action="DQC05" class="dropdown-item">DQC05</a>
+
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+
+
+
+              
+            </div>
+
+            <!-- Company Name (Aligned Right) -->
+            <span class="company-name">
+                <!-- Close Icon -->
+                <a asp-area="MST_Company" asp-controller="MST_Company" asp-action="CompanyList" class="btn btn-link text-white-50">
+                    <i class="bi bi-x-lg"></i>
+                </a>
+            </span>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container-fluid">
+        <div class="content">
+            @if (selectedCompany != null)
+            {
+                <h2>Welcome to @selectedCompany["CompanyName"]'s Dashboard</h2>
+                <p>Select a menu option to proceed.</p>
+            }
+            else
+            {
+                <h2>No Company Selected</h2>
+                <p>Please go back and select a company.</p>
+            }
+        </div>
+    </div>
+</body>
+</html>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var dropdowns = document.querySelectorAll('.nav-item.dropdown');
+
+        dropdowns.forEach(function (dropdown) {
+            var link = dropdown.querySelector('.nav-link');
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+                var menu = dropdown.querySelector('.dropdown-menu');
+
+                // Close other open dropdowns
+                document.querySelectorAll('.dropdown-menu.show').forEach(function (openMenu) {
+                    if (openMenu !== menu) {
+                        openMenu.classList.remove('show');
+                    }
+                });
+
+                menu.classList.toggle('show');
+            });
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function (event) {
+            if (!event.target.closest('.nav-item.dropdown')) {
+                document.querySelectorAll('.dropdown-menu.show').forEach(function (menu) {
+                    menu.classList.remove('show');
+                });
+            }
+        });
+    });
+</script>

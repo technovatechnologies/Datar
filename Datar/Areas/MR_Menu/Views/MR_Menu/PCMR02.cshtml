@@ -1,0 +1,204 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCMR02</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <!-- Include jsPDF and html2canvas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        @@page {
+            size: A4;
+            margin: 20mm;
+        }
+        /* Print styles */
+        @@media print {
+            body {
+                background-color: #fff;
+            }
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Cambria Math';
+        }
+
+         td {
+     border: 1px solid black;
+     padding: 8px;
+     text-align: left;
+     vertical-align: middle;
+ }
+
+
+ th {
+     text-align: center;
+     border: 1px solid black;
+     padding: 8px;
+     vertical-align: middle;
+     word-break: break-word;
+     white-space: normal;
+     overflow-wrap: break-word;
+ }
+
+ .company-title {
+     font-size: 20px;
+     font-weight: bold;
+     letter-spacing: 1px;
+     white-space: nowrap;
+     word-spacing:  5px;
+ }
+
+        .footer-text {
+            font-size: 1rem;
+            font-weight: bold;
+            text-align: left;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4 border rounded p-4 bg-light">
+        <!-- Close Button -->
+        <a asp-area="MST_Company" id="top-logo" asp-controller="MST_Company" asp-action="CompanyDetail" class="btn btn-link position-absolute top-0 end-0 m-3 text-dark">
+            <i class="bi bi-x-lg fs-4"></i>
+        </a>
+        <button id="downloadPdf" class="btn btn-primary my-3">Download PDF</button>
+        <!-- Page Title -->
+        <h1 class="text-black">PCMR02</h1>
+        <!-- Table -->
+        <table class="table table-hover border" id="pdf-content">
+            <tr>
+                <th colspan="3" class="company-title"><strong>BLIZZARD CERAMICA LLP</strong></th>
+                <th colspan="2" class="company-title">PROCESS CHARTS</th>
+            </tr>
+            <tr>
+                <th colspan="3" class="text-start">Department: MR</th>
+                <th colspan="2" class="text-start">Doc. No. : PCMR01</th>
+            </tr>
+            <tr>
+                <th colspan="3" class="text-start">Process: <strong>Management Review</strong></th>
+                <th colspan="2" class="text-start">Rev. No. & Date :</th>
+            </tr>
+            <tr> 
+                <th colspan="3" class="text-start">ISO 9001-1015 Cl. Ref. : 9.3</th>
+                <th colspan="2" class="text-start">Page : 1 of 1</th>
+            </tr>
+            <tr>
+                <th>SR.NO.</th>
+                <th>Sequence of Activity / Control Method</th>
+                <th>Responsibility</th>
+                <th>Document Reference</th>
+                <th>Record Reference</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>To identify the area for improvement, noting the reason for working on it.</td>
+                <td>Concern HOD</td>
+                <td>-</td>
+                <td>Project Report</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>To start data collection based on the identified area.</td>
+                <td>Concern HOD</td>
+                <td>-</td>
+                <td>Project Report</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>To define the current status based on the present available data.</td>
+                <td>Concern HOD</td>
+                <td>-</td>
+                <td>Project Report</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>To identify the causes through root-cause analysis.</td>
+                <td>Concern HOD</td>
+                <td>-</td>
+                <td>Project Report</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>To identify the possible solution based on the root cause analysis.</td>
+                <td>Concern HOD</td>
+                <td>-</td>
+                <td>Project Report</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Evaluate the effect and confirm that the problem & its causes have been eliminated or their effects decreased.</td>
+                <td>Concern HOD</td>
+                <td>-</td>
+                <td>Project Report</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>To implement the decided solution and standardize the new solution for preventing recurrence.</td>
+                <td>Concern HOD</td>
+                <td>-</td>
+                <td>Project Report</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>To evaluate the effectiveness and efficiency of the process improvement action completed.</td>
+                <td>Concern HOD</td>
+                <td>-</td>
+                <td>Project Report</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>To give consideration based on the above solution elsewhere in the organization.</td>
+                <td>Concern HOD</td>
+                <td>-</td>
+                <td>Project Report</td>
+            </tr>
+            <tr>
+                <td colspan="5" style="height: 30vh;"></td>
+            </tr>
+            <tr class="table-secondary">
+                <td colspan="2" class="p-3">Prepared By MR:</td>
+                <td colspan="2" class="p-3">Approved By PARTNER:</td>
+                <td class="p-3"></td>
+            </tr>
+        </table>
+    </div>
+    <script>
+                document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("downloadPdf").addEventListener("click", () => {
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF("p", "mm", "a4");
+
+                // Get elements to hide
+                const btn = document.getElementById("downloadPdf");
+                const logo = document.getElementById("top-logo");
+
+                // Temporarily hide elements
+                if (btn) btn.style.display = "none";
+                if (logo) logo.style.display = "none";
+
+                html2canvas(document.getElementById("pdf-content")).then(canvas => {
+                    const imgData = canvas.toDataURL("image/png");
+                    const imgWidth = 190; // A4 width in mm
+                    const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+                    pdf.addImage(imgData, "PNG", 10, 10, imgWidth, imgHeight);
+                    pdf.save("PCMR02.pdf");
+
+                    // Restore elements after PDF is generated
+                    if (btn) btn.style.display = "block";
+                    if (logo) logo.style.display = "block";
+                });
+            });
+        });
+
+    </script>
+</body>
+</html>
+

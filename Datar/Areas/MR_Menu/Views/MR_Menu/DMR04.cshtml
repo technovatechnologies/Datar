@@ -1,0 +1,483 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DMR04</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <!-- Include jsPDF and html2canvas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        @@page {
+            size: A4;
+            margin: 20mm;
+        }
+        /* Print styles */
+        @@media print {
+            body {
+                background-color: #fff;
+            }
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Cambria Math';
+        }
+
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+            vertical-align: middle;
+        }
+
+
+        th {
+            text-align: center;
+            border: 1px solid black;
+            padding: 8px;
+            vertical-align: middle;
+            word-break: break-word;
+            white-space: normal;
+            overflow-wrap: break-word;
+        }
+
+        .company-title {
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            white-space: nowrap;
+            word-spacing:  5px;
+        }
+        .footer-text {
+            font-size: 1rem;
+            font-weight: bold;
+            text-align: left;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4 border rounded p-4 bg-light">
+        <!-- Close Button -->
+        <a asp-area="MST_Company" id="top-logo" asp-controller="MST_Company" asp-action="CompanyDetail" class="btn btn-link position-absolute top-0 end-0 m-3 text-dark">
+            <i class="bi bi-x-lg fs-4"></i>
+        </a>
+        <button id="downloadPdf" class="btn btn-primary my-3">Download PDF</button>
+        <!-- Page Title -->
+        <h1 class="text-black">DMR04</h1>
+        <!-- Table -->
+        <!-- Table -->
+        <table class="table table-hover border" id="pdf-content">
+            <tr>
+                <td colspan="2" class="company-title">BLIZZARD CERAMICA LLP</td>
+                <td colspan="3" class="company-title">LIST OF RECORDS</td>
+                <td colspan="10" >Doc. No. : D MR 04 <br />Rev. No. & Date :</</td>
+            </tr>
+            <tr>
+                <th>SR.NO.</th>
+                <th>Description of Format</th>
+                <th>Form No</th>
+                <th>Indexing Method</th>
+                <th>Retention Period</th>
+                <th>Location</th>
+            </tr>
+
+            <tr>
+                <td colspan="15" class="fw-bold">MR</td>
+
+            </tr>
+            <tr>
+                <td>1</td>
+                <td >Resource Requirements</td>
+                <td>F MR 01</td>
+                <td>Date Wise</td>
+                <td>1 Year</td>
+                <td>Office</td>
+
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Minutes of Management Review Meeting</td>
+                <td>F MR 01</td>
+                <td>Date Wise</td>
+                <td>1 Year</td>
+                <td>Office</td>
+
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Document Change Note</td>
+                <td>F MR 01</td>
+                <td>Date Wise</td>
+                <td>1 Year</td>
+                <td>Office</td>
+
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Training Requirement Record</td>
+                <td>F MR 04</td>
+                <td>Date Wise</td>
+                <td>1 Year</td>
+                <td>Office</td>
+
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Internal Audit Schedule</td>
+                <td>F MR 05</td>
+                <td>Date Wise</td>
+                <td>1 Year</td>
+                <td>Office</td>
+
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Audit Non-Confirmity Report</td>
+                <td>F MR 06</td>
+                <td>Date Wise</td>
+                <td>1 Year</td>
+                <td>Office</td>
+
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Internal Audit Summary Report</td>
+                <td>F MR 07</td>
+                <td>Date Wise</td>
+                <td>1 Year</td>
+                <td>Office</td>
+
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Preventive Action Report</td>
+                <td>F MR 08</td>
+                <td>Date Wise</td>
+                <td>1 Year</td>
+                <td>Office</td>
+
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Corrective Action Report</td>
+                <td>F MR 09</td>
+                <td>Date Wise</td>
+                <td>1 Year</td>
+                <td>Office</td>
+
+            </tr>
+            <tr>
+                <td colspan="15" class="fw-bold">MARKETING</td>
+
+            </tr>
+
+
+
+            <tr>
+                <td>1</td>
+                <td>List of Machinery & Equipment</td>
+                <td>F MK 01</td>
+                <td>Date Wise</td>
+                <td>1 Years</td>
+                <td>Office</td>
+
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Preventive Maintenance Schedule</td>
+                <td>F MK 01</td>
+                <td>Date Wise</td>
+                <td>1 Years</td>
+                <td>Office</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Customer's Order Confirmation & Monitoring Sheet</td>
+                <td>F MK 01</td>
+                <td>Date Wise</td>
+                <td>1 Years</td>
+                <td>Office</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Customer's Complaint Register</td>
+                <td>F MK 01</td>
+                <td>Date Wise</td>
+                <td>1 Years</td>
+                <td>Office</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Inquiry Register</td>
+                <td>F MK 05</td>
+                <td>Date Wise</td>
+                <td>1 Years</td>
+                <td>Office</td>
+            </tr>
+            <tr>
+                <td colspan="15" class="fw-bold">MAINTENANCE</td>
+
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Machine Breakdown Maintenance Register</td>
+                <td>F MT 01</td>
+                <td>Machine Wise</td>
+                <td>1 Years</td>
+                <td>Office</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Daily Preventive Maintenance Report</td>
+                <td>F MT 02</td>
+                <td>Machine Wisee</td>
+                <td>1 Years</td>
+                <td>Office</td>
+            </tr>
+            <tr>
+                <td colspan="15" style="border-bottom:0px solid black;height:5vh; font-size:1rem;"> Approved By MR </td>
+            </tr>
+            <tr>
+                <td colspan="15" class="fw-bold">PURCHASE</td>
+
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Purchase Order Monitoring Report</td>
+                <td>F PR 01</td>
+                <td>Date Wise</td>
+                <td>1 Years</td>
+                <td>Office</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Supplier's Registration Form</td>
+                <td>F PR 01</td>
+                <td>Supplier Wise</td>
+                <td>Till the Supplier present</td>
+                <td>Office</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Supplier Rating Report</td>
+                <td>F PR 01</td>
+                <td>Date Wise</td>
+                <td>1 Years</td>
+                <td>Office</td>
+            </tr>
+
+            <tr>
+                <td colspan="15" class="fw-bold">PRODUCTION PLANNING AND DEVELOPMENT</td>
+
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>New Product Quality Planning Timing Chart</td>
+                <td>F PPD 01</td>
+                <td>Date Wise</td>
+                <td>1 month</td>
+                <td>Office</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Production Schedule Sheet</td>
+                <td>F PPD 01</td>
+                <td>Month Wise</td>
+                <td>3 month</td>
+                <td>Office</td>
+            </tr>
+            <tr>
+                <td colspan="15" class="fw-bold">STORE</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Inward Register</td>
+                <td>F ST 01</td>
+                <td>Date Wise</td>
+                <td>3 month</td>
+                <td>Office</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Issue Register (Consumable Item)</td>
+                <td>F ST 01</td>
+                <td>Date Wise</td>
+                <td>3 month</td>
+                <td>Office</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Stock Statement (Consumable Item)</td>
+                <td>F ST 01</td>
+                <td>Month Wise</td>
+                <td>3 month</td>
+                <td>Office</td>
+            </tr>
+            <tr>
+                <td colspan="15" class="fw-bold">HR</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Training Requirement Record</td>
+                <td>F HR 01</td>
+                <td>Month Wise</td>
+                <td>1 year</td>
+                <td>Office</td>
+            </tr>
+            <tr>
+                <td colspan="15" style="border-bottom:0px solid black;height:5vh; font-size:1rem;"> Approved By MR </td>
+            </tr>
+            <tr>
+                <td colspan="15" class="fw-bold">QC</td>
+
+
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Ball Mill Loading Report</td>
+                <td>F QC 01</td>
+                <td>Date Wise</td>
+                <td>1 month</td>
+                <td>PLANT</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Ball Mill Check Report</td>
+                <td>F QC 02</td>
+                <td>Date Wise</td>
+                <td>1 month</td>
+                <td>PLANT</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Silo Stock Report</td>
+                <td>F QC 03</td>
+                <td>Date Wise</td>
+                <td>1 month</td>
+                <td>PLANT</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Press Parameters Record</td>
+                <td>F QC 04</td>
+                <td>Date Wise</td>
+                <td>1 month</td>
+                <td>PLANT</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Five Layer Horizantal Parameters Record</td>
+                <td>F QC 05</td>
+                <td>Date Wise</td>
+                <td>1 month</td>
+                <td>PLANT</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Kiln Parameters Record ( Temp.)</td>
+                <td>F QC 06</td>
+                <td>Date Wise</td>
+                <td>1 month</td>
+                <td>PLANT</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Kiln Parameters Record</td>
+                <td>F QC 07</td>
+                <td>Date Wise</td>
+                <td>1 month</td>
+                <td>PLANT</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Glaze Line Parameters Record</td>
+                <td>F QC 08</td>
+                <td>Date Wise</td>
+                <td>1 month</td>
+                <td>PLANT</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Shorting Report</td>
+                <td>F QC 09</td>
+                <td>Date Wise</td>
+                <td>1 month</td>
+                <td>PLANT</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Defact Report</td>
+                <td>F QC 10</td>
+                <td>Date Wise</td>
+                <td>1 month</td>
+                <td>PLANT</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>Online Quatity Cantrol Report</td>
+                <td>F QC 11</td>
+                <td>Date Wise</td>
+                <td>1 month</td>
+                <td>PLANT</td>
+            <tr>
+                <td>12</td>
+                <td>Spray Dayer Data Report</td>
+                <td>F QC 12</td>
+                <td>Date Wise</td>
+                <td>1 month</td>
+                <td>PLANT</td>
+            <tr>
+                <td>13</td>
+                <td>Row Matirial Report</td>
+                <td>F QC 13</td>
+                <td>Date Wise</td>
+                <td>1 month</td>
+                <td>PLANT</td>
+
+            </tr>
+
+            <tr>
+                <td colspan="15" style="border-bottom:3px solid black;height:5vh; font-size:1rem;"> Approved By PARTNER : </td>
+            </tr>
+
+
+        </table>
+    </div>
+    <script>
+                document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("downloadPdf").addEventListener("click", () => {
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF("p", "mm", "a4");
+
+                // Get elements to hide
+                const btn = document.getElementById("downloadPdf");
+                const logo = document.getElementById("top-logo");
+
+                // Temporarily hide elements
+                if (btn) btn.style.display = "none";
+                if (logo) logo.style.display = "none";
+
+                html2canvas(document.getElementById("pdf-content")).then(canvas => {
+                    const imgData = canvas.toDataURL("image/png");
+                    const imgWidth = 190; // A4 width in mm
+                    const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+                    pdf.addImage(imgData, "PNG", 10, 10, imgWidth, imgHeight);
+                    pdf.save("DMR04.pdf");
+
+                    // Restore elements after PDF is generated
+                    if (btn) btn.style.display = "block";
+                    if (logo) logo.style.display = "block";
+                });
+            });
+        });
+
+    </script>
+</body>
+</html> 

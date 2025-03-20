@@ -1,0 +1,420 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quality Objectives 2024</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        @@page {
+            size: A4;
+            margin: 20mm;
+        }
+        /* Print styles */
+        @@media print {
+            body {
+                background-color:   #fff;
+            }
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Cambria Math';
+        }
+
+
+
+        .doc-title {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .footer-text {
+            font-size: 1rem;
+            font-weight: bold;
+            text-align: left;
+            padding: 10px;
+        }
+
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+            vertical-align: middle;
+        }
+
+
+        th {
+            text-align: center;
+            border: 1px solid black;
+            padding: 8px;
+            vertical-align: middle;
+            word-break: break-word;
+            white-space: normal;
+            overflow-wrap: break-word;
+        }
+
+        .company-title {
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            white-space: nowrap;
+            word-spacing:   5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Close Button -->
+    <a asp-area="MST_Company" id="top-logo" asp-controller="MST_Company" asp-action="CompanyDetail" class="btn btn-link position-absolute top-0 end-0 m-3 text-dark">
+        <i class="bi bi-x-lg fs-4"></i>
+    </a>
+    <button id="downloadPdf" class="btn btn-primary my-3">Download PDF</button>
+    <div class="container mt-4 border rounded p-4 bg-light">
+        <!-- Page Title -->
+        <h1 class="text-black">PCMK01</h1>
+        <table class="table table-hover border" id="pdf-content">
+            <tr>
+                <td colspan="3" class="company-title">BLIZZARD CERAMICA LLP</td>
+                <td colspan="2" class="company-title">PROCESS CHARTS</td>
+
+            </tr>
+            <tr>
+                <td colspan="3"><strong>Department:</strong> Marketing</td>
+                <td colspan="2"><strong>Doc. No.:</strong> PC MK 01</td>
+            </tr>
+            <tr>
+                <td colspan="3"><strong>Process:</strong> <span class="highlight">Marketing & Sales and Dispatch</span></td>
+                <td colspan="2"><strong>Rev. No. & Date:</strong></td>
+            </tr>
+            <tr>
+                <td colspan="3"><strong>ISO 9001:2015 Cl. Ref :</strong> 8.2</td>
+                <td colspan="2"><strong>Page No.:</strong> 1 of 2</td>
+            </tr>
+            <tr>
+                <th>Sr. No.</th>
+                <th>Sequence of Activity / Control Method</th>
+                <th>Responsibility</th>
+                <th>Document Reference</th>
+                <th>Record Reference</th>
+            </tr>
+
+            <!-- Section A -->
+            <tr class="section-header">
+                <td colspan="5">[A] Contract review of regular product :</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>To maintain the list of customers.</td>
+                <td>Mktg. Officer</td>
+                <td>DMK02</td>
+                <td>--</td>
+
+
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Whenever any inquiry for regular product is received from the customer, to prepare quotation and submit to customer.</td>
+                <td>Mktg. Officer</td>
+                <td>--</td>
+                <td>FMK05</td>
+
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Receipt of verbally / written order for regular product from the customer against quotation / tender / offer.</td>
+                <td>Mktg. Officer</td>
+                <td>--</td>
+                <td>FMK03</td>
+
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>To monitor the planning and accordingly give the dates for delivery.</td>
+                <td>Mktg. Officer</td>
+                <td>--</td>
+                <td>Excise Report</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>To review customer order requirements (verbal / written) received from the customer and gets approval from the customer if required.</td>
+                <td>Mktg. Officer</td>
+                <td>--</td>
+                <td>FMK03</td>
+
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>If any ambiguity observed at the time of confirmation, make clarification with customer.</td>
+                <td>Mktg. Officer</td>
+                <td>--</td>
+                <td>FMK03</td>
+
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>To give the priority to the production supervisor for the delivery status.</td>
+                <td>Mktg. Officer</td>
+                <td>--</td>
+                <td>FMK03</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>To make dispatch arrangement as per the order confirmation at the time of material is ready for dispatch.</td>
+                <td>Mktg. Officer</td>
+                <td>--</td>
+                <td>FMK03</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>To keep track of order receipt, confirmation, and dispatch.</td>
+                <td>Mktg. Officer</td>
+                <td>--</td>
+                <td>FMK03</td>
+            </tr>
+
+
+            <!-- Section B -->
+            <tr class="section-header">
+                <td colspan="5">[B] Contract review of new product :</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>To record the verbal / written inquiry received from the customer.</td>
+                <td>Mktg. Officer</td>
+                <td></td>
+                <td>FMK05</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>To carryout feasibility review of customer's inquiry.</td>
+                <td>Mktg. Officer</td>
+                <td></td>
+                <td>FMK05</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>If any ambiguty observed at the time of review, make clerification with customer.</td>
+                <td>Mktg. Officer</td>
+                <td></td>
+                <td>Letter</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>To send counter offer to customer, if found feasible.</td>
+                <td>Mktg. Officer</td>
+                <td></td>
+                <td>Letter</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Inform to customer, if found not feasible. To mention the reason of regret from our side.</td>
+                <td>Mktg. Officer</td>
+                <td></td>
+                <td>Letter</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Feedback received from the customer. </td>
+                <td>Mktg. Officer</td>
+                <td></td>
+                <td>Letter</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>If contract is converted in to order, follow the steps as mention at section 'A- 3 to 10' of regular order.</td>
+                <td>Mktg. Officer</td>
+                <td></td>
+                <td>Letter</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>To start development of new part as per development process.</td>
+                <td>PARTNER</td>
+                <td>--</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>If contract is not converted into order, close the matter and mention the reason of regret.</td>
+                <td>Mktg. Officer</td>
+                <td></td>
+                <td>FMK05</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <br />
+            <br />
+            <br />
+            <br />
+
+            <tr>
+                <td colspan="2">Prepared By MR :</td>
+                <td colspan="3">Approved By : PARTNER</td>
+            </tr>
+            <tr class="section-header">
+                <td colspan="5">
+                    [C] Amendment in order / contract :
+                </td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>To receipt of changes in technical specification, handover to PARTNER along with specification / drawing received from the customer.</td>
+                <td>Mktg. Officer</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>To review the changes received from the customer and decide to implementation of new changes.</td>
+                <td>Marketing officer</td>
+                <td></td>
+                <td>FPPD02</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Inform to customer regarding implemenation of new changes based on existing status.</td>
+                <td>Marketing officer</td>
+                <td></td>
+                <td>FPPD02</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Make necessary changes and inform to concerned persons regarding implementation.</td>
+                <td>Marketing officer</td>
+                <td></td>
+                <td>FPPD02</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>To update the necessary documents and implement the changes.</td>
+                <td>Marketing officer</td>
+                <td></td>
+                <td>FPPD02</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Incase changes in commercial aspect, review the same and resolve with customer, if necessary. </td>
+                <td>Marketing officer</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Incase any changes received in schedule / quantity, review the changes received from the customer.</td>
+                <td>Marketing officer</td>
+                <td></td>
+                <td>FPPD02</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Changes are incorporate in production planning and inform to concerned person based on existing status.</td>
+                <td>Marketing officer</td>
+                <td></td>
+                <td>FPPD02</td>
+            </tr>
+            <tr class="section-header">
+                <td colspan="5">
+                    [D]  Dispatch
+
+                </td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Customer satisfaction is carried out once in a year.</td>
+                <td>Mktg. Officer</td>
+                <td>DMK02</td>
+                <td>--</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>To collect satisfaction informations from each customer through customer satisfaction survey form.</td>
+                <td>Mktg. Officer</td>
+                <td>--</td>
+                <td>FMK01</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>To review the informations received from the customer.</td>
+                <td>Mktg. Officer</td>
+                <td>--</td>
+                <td>FMK02</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>To make corrective action plan where dissatisfaction observed, considering the feasibility.</td>
+                <td>Mktg. Officer</td>
+                <td>--</td>
+                <td>FMR09</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>To implement the decided actions.</td>
+                <td>Mktg. Officer</td>
+                <td>--</td>
+                <td>FMK09</td>
+            <tr>
+                <td>6</td>
+                <td>To verify the implementation and reviewed for effectiveness.</td>
+                <td>Mktg. Officer</td>
+                <td>--</td>
+                <td>FMK09</td>
+            </tr>
+            <tr>
+                <td colspan="2">Prepared By MR :</td>
+                <td colspan="3">Approved By : PARTNER</td>
+            </tr>
+
+        </table>
+    </div>
+    <script>
+                document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("downloadPdf").addEventListener("click", () => {
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF("p", "mm", "a4");
+
+                // Get elements to hide
+                const btn = document.getElementById("downloadPdf");
+                const logo = document.getElementById("top-logo");
+
+                // Temporarily hide elements
+                if (btn) btn.style.display = "none";
+                if (logo) logo.style.display = "none";
+
+                html2canvas(document.getElementById("pdf-content")).then(canvas => {
+                    const imgData = canvas.toDataURL("image/png");
+                    const imgWidth = 190; // A4 width in mm
+                    const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+                    pdf.addImage(imgData, "PNG", 10, 10, imgWidth, imgHeight);
+                    pdf.save("PCMK01.pdf");
+
+                    // Restore elements after PDF is generated
+                    if (btn) btn.style.display = "block";
+                    if (logo) logo.style.display = "block";
+                });
+            });
+        });
+
+    </script>
+    <!-- Include jsPDF and html2canvas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</body>
+</html>

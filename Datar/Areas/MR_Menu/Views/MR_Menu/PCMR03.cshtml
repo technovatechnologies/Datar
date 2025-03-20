@@ -1,0 +1,689 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quality Objectives 2024</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <!-- Include jsPDF and html2canvas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        @@page {
+            size: A4;
+            margin: 20mm;
+        }
+        /* Print styles */
+        @@media print {
+            body {
+                background-color:   #fff;
+            }
+        }
+
+        body {
+            font-family: 'Cambria Math';
+            margin: 20px;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        .container-box {
+            max-width: 900px;
+            background: white;
+            border: 2px solid #000;
+            padding: 20px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .header-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+            .header-table td {
+                border: 1px solid #000;
+                padding: 8px;
+                text-align: left;
+            }
+
+        .title {
+            font-size: 20px;
+            font-weight: bold;
+            background: #ddd;
+        }
+
+        .company-name {
+            font-weight: bold;
+            text-align: right;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        h2 {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        h3 {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        h5 {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .underline {
+            text-decoration: underline;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: Arial, sans-serif;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .document-table {
+            width: 60%;
+            border-collapse: collapse;
+            border: 1px solid black;
+            background-color: white;
+        }
+
+            .document-table th, .document-table td {
+                border: 1px solid black;
+                padding: 10px;
+                text-align: left;
+            }
+
+            .document-table th {
+                background-color: #ddd;
+            }
+    </style>
+</head>
+<body>
+    <!-- Close Button -->
+    <a asp-area="MST_Company" id="top-logo" asp-controller="MST_Company" asp-action="CompanyDetail" class="btn btn-link position-absolute top-0 end-0 m-3 text-dark">
+        <i class="bi bi-x-lg fs-4"></i>
+    </a>
+    <button id="downloadPdf" class="btn btn-primary my-3">Download PDF</button>
+    <!-- Page Title -->
+    <h1 class="text-black">PCMR03</h1>
+    <div class="container my-5">
+        <div class="container-box mx-auto p-4">
+            <table id="pdf-content">
+                <tr>
+                    <th colspan="2" class="company-title">BLIZZARD CERAMICA LLP</th>
+                    <th colspan="2" class="company-title">PROCEDURE</th>
+                </tr>
+                <tr>
+                    <td colspan="2">Department : MR</td>
+                    <td colspan="2">Doc. No. : PC MR 03</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Subject : Control of documents</td>
+                    <td colspan="2">Rev. No. & Date : 01 / 01.08.2024</td>
+                </tr>
+                <tr>
+                    <td colspan="2">ISO-9001 Clause No. : 7.5.3</td>
+                    <td colspan="2">Page No. : 1 of 4</td>
+                </tr>
+            </table>
+
+            <div class="content">
+
+                <h2>
+                    1.&nbsp; &nbsp;	PURPOSE   :
+                </h2>
+                <p style="margin-left:50px;">
+
+                    The purpose of this procedure is to define the system of reviewing, approving, distribution, method of changes, re-approval of document that are used in the quality management system, including customer drawings & standards and Indian or International standards.
+                </p>
+
+                <h2>
+                    2.&nbsp; &nbsp;	SCOPE   :
+                </h2>
+
+                <p style="margin-left:50px;">Applicable to all documents used for the quality management system.</p>
+                <h3>3.&nbsp; &nbsp;	RESPONSIBILITY :  </h3>
+
+                <p style="margin-left:50px;">
+                    MR and concerned head of department is responsible to implement this procedure.
+
+                </p>
+
+                <h2>
+
+                    4.&nbsp; &nbsp;	PROCEDURE   :
+                </h2>
+                <h3 style="margin-left:30px;">
+                    4.1	DOCUMENT APPROVAL & DISTRIBUTION:
+                </h3>
+                <h5 style="margin-left:50px;"> 4.1.1	Responsibility matrix for documents used in the quality system as given below. </h5><br />
+                <table class="document-table" style="margin-left:100px;">
+                    <tr>
+                        <th>Sr.</th>
+                        <th>Description of Document</th>
+                        <th>Approving Authority</th>
+                        <th>Issuing Authority</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Quality Manual</td>
+                        <td>PARTNER</td>
+                        <td>MR</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Process chart & procedure</td>
+                        <td>PARTNER</td>
+                        <td>MR</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Work-instruction</td>
+                        <td>PARTNER</td>
+                        <td>MR</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Reference Document</td>
+                        <td>PARTNER</td>
+                        <td>MR</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Formats</td>
+                        <td>PARTNER</td>
+                        <td>MR</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Drawings (Internal)</td>
+                        <td>PARTNER</td>
+                        <td>MR</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Standards</td>
+                        <td>--</td>
+                        <td>MR</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Control plan</td>
+                        <td>PARTNER</td>
+                        <td>MR</td>
+                    </tr>
+                </table>
+
+
+                <h5 style="margin-left:50px;">4.1.2	 </h5>
+                <p style="margin-left:70px;">
+                    Issuing authority shall maintain the appropriate distribution list of documents.
+                    The list includes document name, document number, latest revision number, revision date and distribution.
+                    Applicable documents are distributed to the function concerned. The record of distribution is maintained in the respective list.
+
+                </p>
+
+                <h5 style="margin-left:50px;">4.1.3	</h5>
+                <p style="margin-left:70px;">
+                    Various types of stamps shall be used in the Quality management system for identifying the documents
+
+                </p>
+                <h5 style="margin-left:50px;">(A) “MASTER &nbsp; COPY  ”  :	</h5>
+                <p style="margin-left:70px;">
+                    First copy [original signature] of all documents is treated as master copy.
+                    “MASTER COPY“stamp shall be put on the backside of the original documents in blue color.
+                </p>
+                <br />
+                <br>
+                <h5 style="margin-left:50px;">
+                    (B) “CONTROLLED &nbsp; COPY”:
+                </h5>
+
+                <p style="margin-left:70px;">
+                    The document that is withdrawn by issuing authority when there is a change or it becomes obsolete.
+                    Controlled documents shall be marked with “CONTROLLED COPY “stamp in blue color at the time of issue.
+                    Incase of formats stamp shall be marked on the backside of the format.
+
+                </p>
+
+
+                <table>
+                    <tr>
+                        <th colspan="3" width="35%">Prepared By</th>
+                        <th colspan="3" width="35%">Approved By</th>
+                        <th rowspan="3"></th>
+                    </tr>
+                    <tr>
+                        <td colspan="3" width="35%"></td>
+                        <td colspan="3" width="35%"></td>
+                    </tr>
+                    <tr>
+                        <th colspan="3" width="35%">MR</th>
+                        <th colspan="3" width="35%">PARTNER</th>
+                    </tr>
+
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <div class="container-box mx-auto p-4">
+            <table>
+                <tr> 
+                    <th colspan="2" class="company-title">BLIZZARD CERAMICA LLP</th>
+                    <th colspan="2" class="company-title">PROCEDURE</th>
+                </tr>
+                <tr>
+                    <td colspan="2">Department : MR</td>
+                    <td colspan="2">Doc. No. : PC MR 03</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Subject : Control of documents</td>
+                    <td colspan="2">Rev. No. & Date : 01 / 01.08.2024</td>
+                </tr>
+                <tr>
+                    <td colspan="2" >ISO-9001 Clause No. : 7.5.3</td>
+                    <td colspan="2">Page No. : 2 of 4</td>
+                </tr>
+            </table>
+
+            <div class="content">
+                <h5 style="margin-left:50px;">
+                    (C) “INVALID COPY”:
+                </h5>
+                <p style="margin-left:70px;">
+                    Whenever revision takes place the obsolete documents shall be withdrawn and marked with “INVALID COPY “stamp in blue color.
+                </p>
+
+                <h5 style="margin-left:50px;">
+                    (D) “REFERENCE COPY”:
+                </h5>
+                <p style="margin-left:70px;">
+                    Any documents issued to in-house or outside only for reference, the same shall be marked with “REFERENCE COPY “stamp in blue color.
+                    Any obsolete documents retain for legal or knowledge purpose the same shall be marked with “REFERENCE COPY “stamp in blue color.
+                </p>
+
+                <p style="margin-left:50px;">	MR keeps all stamps used in the system in safe custody to avoid unauthorized use.  </p><br />
+                <h3 style="margin-left:30px;">4.2	DOCUMENT CHANGES & REAPPROVAL: </h3>
+
+                <h5 style="margin-left:50px;">4.2.1</h5>
+                <p style="margin-left:70px;">
+                    Whenever any changes requires in the documents, the concerned user/originator shall generate the document change note, form no.
+                    FMR03 and hand over to approving authority
+                </p>
+
+
+                <h5 style="margin-left:50px;">4.2.2 </h5>
+                <p style="margin-left:70px;">
+                    Approving authority shall review the proposal and approve the same. After approval, the same shall be handed over to issuing authority.
+
+                </p>
+
+                <h5 style="margin-left:50px;">
+                    4.2.3
+
+                </h5>
+                <p style="margin-left:70px;">
+                    Issuing authority shall revise the document and gets re-approval from approving authority.
+
+                </p>
+                <h5 style="margin-left:50px;">4.2.4 </h5>
+                <p style="margin-left:70px;">
+                    After getting re-approval of revise document, issuing authority shall issue the revised documents and withdraw the
+                    obsolete documents from the concerned person.
+
+                </p>
+
+                <h5 style="margin-left:50px;"> 4.2.5 </h5>
+                <p style="margin-left:70px;">
+                    Issuing Authority shall keep the master copy with him. Issuing authority shall keep the copy of document change note with invalid
+                    copy
+                </p>
+
+
+                <h5 style="margin-left:50px;">4.2.6	</h5>
+                <p style="margin-left:70px;">
+                    The obsolete documents shall be withdrawn by issuing authority and record of the same shall be maintained in respective distribution list.
+                    Concerned user is responsible to remove all obsolete documents from the point of use.
+
+                </p>
+
+
+                <h3 style="margin-left:30px;">4.3	DRAWINGS:	</h3>
+                <br />
+                <br />
+                <h5 style="margin-left:50px;">
+                    4.3.1
+                </h5>
+                <p style="margin-left:70px;">
+                    Based on the customer requirement or market research or branded company’s products, QC Supervisor shall
+                    prepare drawing of section for the internal use.
+                </p>
+                <br />
+                <h5 style="margin-left:50px;">4.3.2</h5>
+                <p style="margin-left:70px;">
+                    Incase of any changes are required in any existing drawing the person seeking changes shall raise document change note in doc. no.
+                    FMR03 and send to MR, after getting approval from the authorized person.
+                </p>
+
+
+
+                <table>
+                    <tr>
+                        <th colspan="3" width="35%">Prepared By</th>
+                        <th colspan="3" width="35%">Approved By</th>
+                        <th rowspan="3"></th>
+                    </tr>
+                    <tr>
+                        <td colspan="3" width="35%"></td>
+                        <td colspan="3" width="35%"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" width="35%">MR</td>
+                        <td colspan="3" width="35%">PARTNER</td>
+                    </tr>
+
+
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="container my-5">
+        <div class="container-box mx-auto p-4">
+            <table>
+                <tr>
+                    <th colspan="2" class="company-title">BLIZZARD CERAMICA LLP</th>
+                    <th colspan="2" class="company-title">PROCEDURE</th>
+                </tr>
+                <tr>
+                    <td colspan="2">Department : MR</td>
+                    <td colspan="2">Doc. No. : PC MR 03</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Subject : Control of documents</td>
+                    <td colspan="2">Rev. No. & Date : 01 / 01.08.2024</td>
+                </tr>
+                <tr>
+                    <td colspan="2">ISO-9001 Clause No. : 7.5.3</td>
+                    <td colspan="2">Page No. : 3 of 4</td>
+                </tr>
+            </table>
+
+            <div class="content">
+                <h5 style="margin-left:50px;"> 4.3.3</h5>
+                <p style="margin-left:70px;">
+                    Accordingly MR shall revise the drawing. MR shall issue revised copy and withdraw obsolete copy.
+                    He shall keep the records in drawing distribution list.
+
+                </p>
+
+                <h5 style="margin-left:50px;"> 4.3.4</h5>
+                <p style="margin-left:70px;">
+                    Internal drawing (products) shall also be revised whenever revision takes place in customer drawing / specification.
+
+                </p>
+                <h3 style="margin-left:30px;"> 4.4	INDIAN & INTERNATIONAL STANDARDS   :</h3>
+                <h5 style="margin-left:50px;">4.4.1</h5>
+                <p style="margin-left:70px;">
+
+                    QC Supervisor shall maintain the list of applicable standards in doc. no. DQC04.
+                </p>
+                <h5 style="margin-left:50px;">4.4.2</h5>
+                <p style="margin-left:70px;">
+
+                    QC Supervisor shall ensure that all standards are latest through verification with approved agency.
+                    If any standard is revised, latest copy shall be collected and list shall be updated accordingly.
+                </p>
+                <h5 style="margin-left:50px;">4.4.3</h5>
+                <p style="margin-left:70px;">
+
+                    QC Supervisor shall issue latest copy and withdraw obsolete copy if in circular and keep the record in distribution list, doc. no. DQC04.
+                </p>
+                <h3 style="margin-left:30px;"> 4.5	DOCUMENT CONTROL IN ELECTRONIC MEDIA :</h3>
+                <h5 style="margin-left:50px;"> 4.5.1</h5>
+                <p style="margin-left:70px;">
+
+                    Some of the documents are maintained in electronic media. In that case the concerned user shall use password to avoid miss use. Regular backup is carried out.
+                </p>
+
+
+
+                <h3 style="margin-left:30px;">
+                    4.5 	DOCUMENT NUMBERING :
+                </h3>
+                <p style="margin-left:50px;">Unique numbering shall identify all documents & formats used in the quality management system as given below.</p>
+                <table class="document-table" style="margin-left:50px;">
+                    <tr>
+                        <th>Sr.</th>
+                        <th>Description of Document</th>
+                        <th>Numbering System</th>
+
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Quality Manual</td>
+                        <td>QM-Sr. No.</td>
+
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Process chart & procedure</td>
+                        <td>PC-Dept. code-Sr. No.</td>
+
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Work-instruction</td>
+                        <td>WI-Sr. No.</td>
+
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Reference Document</td>
+                        <td>D-Dept. code-Sr. No.</td>
+
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Formats</td>
+                        <td>F-Dept. code-Sr. No.</td>
+
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Drawings (Internal)</td>
+                        <td>AA – Sr.No.</td>
+
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Standards</td>
+                        <td>CP-Sr. No.</td>
+
+                    </tr>
+
+                </table>
+
+
+                <h3 style="margin-left:30px;">4.5 	DEPARTMENT CODE :</h3>
+                <p style="margin-left:50px;">Department code number is given as below.</p>
+                <ol style="margin-left:50px;">
+                    <li>
+                        MR – Management Representative
+                    </li>
+                    <li>
+                        MK – Marketing
+                    </li>
+                    <li>
+                        MT – Maintenance
+                    </li>
+                    <li>
+                        PR – Purchase
+                    </li>
+                    <li>
+                        ST – Store
+                    </li>
+                    <li>
+                        QC – Quality control
+                    </li>
+                    <li>
+                        PPD – Production Planning
+                    </li>
+                    <li>
+                        HR – Human Resources
+                    </li>
+                </ol>
+
+                <br />
+                <br />
+                <br />
+
+                <table>
+                    <tr>
+                        <th colspan="3" width="35%">Prepared By</th>
+                        <th colspan="3" width="35%">Approved By</th>
+                        <th rowspan="3"></th>
+                    </tr>
+                    <tr>
+                        <td colspan="3" width="35%"></td>
+                        <td colspan="3" width="35%"></td>
+                    </tr>
+                    <tr>
+                        <th colspan="3" width="35%">MR</th>
+                        <th colspan="3" width="35%">PARTNER</th>
+                    </tr>
+
+
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="container my-5">
+        <div class="container-box mx-auto p-4">
+            <table>
+                <tr>
+                    <th colspan="2" class="company-title">BLIZZARD CERAMICA LLP</th>
+                    <th colspan="2" class="company-title">PROCEDURE</th>
+                </tr>
+                <tr>
+                    <td colspan="2">Department : MR</td>
+                    <td colspan="2">Doc. No. : PC MR 03</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Subject : Control of documents</td>
+                    <td colspan="2">Rev. No. & Date : 01 / 01.08.2024</td>
+                </tr>
+                <tr>
+                    <td colspan="2">ISO-9001 Clause No. : 7.5.3</td>
+                    <td colspan="2">Page No. : 4 of 4</td>
+                </tr>
+            </table>
+
+            <div class="content">
+                <h2 style="margin-left:30px;">Reference  :</h2>
+                <ol style="margin-left:30px;">
+                    <li>
+                        List of procedure & processes		: D MR 08
+                    </li>
+                    <li>
+                        List of work-instructions			: D MR 03
+                    </li>
+                    <li>
+                        List of Documents				: D MR 01
+                    </li>
+                    <li>
+                        List of formats				: D MR 02
+                    </li>
+                    <li>
+                        List of Products		 		: D MK 01
+                    </li>
+                    <li>
+                        List of standards & manuals		: D QC 04
+                    </li>
+                </ol>
+                <h2 style="margin-left:30px;">Records  :</h2>
+                <ol style="margin-left:30px;">
+                    <li>
+                        Document Change Note 			: F MR 03
+                    </li>
+
+                </ol>
+
+
+                <table>
+                    <tr>
+                        <th colspan="3" width="35%">Prepared By</th>
+                        <th colspan="3" width="35%">Approved By</th>
+                        <th rowspan="3"></th>
+                    </tr>
+                    <tr>
+                        <td colspan="3" width="35%"></td>
+                        <td colspan="3" width="35%"></td>
+                    </tr>
+                    <tr>
+                        <th colspan="3" width="35%">MR</th>
+                        <th colspan="3" width="35%">PARTNER</th>
+                    </tr>
+
+
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+                document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("downloadPdf").addEventListener("click", () => {
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF("p", "mm", "a4");
+
+                // Get elements to hide
+                const btn = document.getElementById("downloadPdf");
+                const logo = document.getElementById("top-logo");
+
+                // Temporarily hide elements
+                if (btn) btn.style.display = "none";
+                if (logo) logo.style.display = "none";
+
+                html2canvas(document.getElementById("pdf-content")).then(canvas => {
+                    const imgData = canvas.toDataURL("image/png");
+                    const imgWidth = 190; // A4 width in mm
+                    const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+                    pdf.addImage(imgData, "PNG", 10, 10, imgWidth, imgHeight);
+                    pdf.save("PCMR03.pdf");
+
+                    // Restore elements after PDF is generated
+                    if (btn) btn.style.display = "block";
+                    if (logo) logo.style.display = "block";
+                });
+            });
+        });
+
+    </script>
+</body>
+</html>

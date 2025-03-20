@@ -1,0 +1,109 @@
+﻿@{
+    ViewData["Title"] = "User Login Page";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+
+
+
+@* <a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P19">P19</a>
+<a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P20">P20</a>
+<a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P21">P21</a>
+<a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P22">P22</a>
+<a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P23">P23</a>
+<a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P24">P24</a>
+<a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P25">P25</a>
+<a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P26">P26</a>
+<a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P27">P27</a>
+<a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P28">P28</a>
+<a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P29">P29</a>
+<a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P30">P30</a>
+<a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P55">P55</a>
+<a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P56">P56</a>
+<a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P57">P57</a>
+<a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P58">P58</a>
+<a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P59">P59</a>
+<a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P60">P60</a>
+<a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P70">P70</a>
+<a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P78">P78</a>
+<a asp-area="MR_MenuWord" asp-controller="MR_MenuWord" asp-action="P79">P79</a> *@
+  @model Datar.Areas.SEC_User.Models.SEC_UserModel
+
+<section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+                <div class="d-flex justify-content-center py-4">
+                    <a class="logo d-flex align-items-center w-auto">
+                        <img src="~/AdminPanel/img/logo.png" />
+                        <span class="d-none d-lg-block">Datar Engineering</span>
+                    </a>
+                </div>
+
+                <div class="card mb-3" style="border-radius:20px; ">
+                    <div class="card-body">
+                        <div class="pt-4 pb-2">
+                            <h5 class="card-title text-center pb-0 fs-4">Login to your Account</h5>
+                            <p class="text-center small">Enter your UserName & Password to Login</p>
+                        </div>
+
+                        <form class="row g-3" method="post" asp-area="SEC_User" asp-controller="SEC_User" asp-action="Login">
+
+                            <div class="col-12">
+                                @if (TempData["Error"] != null)
+                                {
+                                    <div class="text-danger">@Html.Raw(TempData["Error"])</div>
+                                }
+
+                                <label class="form-label"><span style="color:red"></span>UserName</label>
+                                <div class="input-group">
+                                    <input type="text" asp-for="UserName" class="form-control" />
+                                </div>
+                                <span asp-validation-for="UserName" class="text-danger"></span>
+
+                            </div>
+                            <div class="col-12">
+
+                                <label class="form-label"><span style="color:red"></span>Password</label>
+                                <input type="password" asp-for="PassWord" class="form-control" />
+                            </div>
+                            <span asp-validation-for="PassWord" class="text-danger"></span>
+
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="remember" value="true" id="rememberMe">
+                                    <label class="form-check-label" for="rememberMe">Remember me</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary w-100" type="submit">Login</button>
+                            </div>
+                            <div class="col-12">
+                                <p class="small mb-0">
+                                    Don't have account?
+                                    <a asp-controller="SEC_User" asp-action="Register" asp-area="SEC_User">Create an account</a>
+
+
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+        Designed by <a href="https://bootstrapmade.com/">Technova Technologies</a>
+    </div>
+</section>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}   

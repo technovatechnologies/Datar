@@ -1,0 +1,687 @@
+﻿<html>
+<head>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        @@page {
+            size: A4;
+            margin: 20mm;
+        }
+        /* Print styles */
+        @@media print {
+            body {
+                background-color:   #fff;
+            }
+        }
+
+        body {
+            font-family: 'Cambria Math';
+            margin: 20px;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        .container-box {
+            max-width: 900px;
+            background: white;
+            border: 2px solid #000;
+            padding: 20px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .header-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+            .header-table td {
+                border: 1px solid #000;
+                padding: 8px;
+                text-align: left;
+            }
+
+        .title {
+            font-size: 20px;
+            font-weight: bold;
+            background: #ddd;
+        }
+
+        .company-name {
+            font-weight: bold;
+            text-align: right;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        h2 {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        h3 {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        h5 {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .underline {
+            text-decoration: underline;
+        }
+
+        .term {
+            min-width: 150px;
+        }
+
+        .separator {
+        }
+
+        .entry {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+            margin-left: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: Arial, sans-serif;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+            vertical-align: middle;
+        }
+
+
+        th {
+            text-align: center;
+            border: 1px solid black;
+            padding: 8px;
+            vertical-align: middle;
+            word-break: break-word;
+            white-space: normal;
+            overflow-wrap: break-word;
+        }
+
+        .company-title {
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            white-space: nowrap;
+            word-spacing:   5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Close Button -->
+    <a asp-area="MST_Company" id="top-logo" asp-controller="MST_Company" asp-action="CompanyDetail" class="btn btn-link position-absolute top-0 end-0 m-3 text-dark">
+        <i class="bi bi-x-lg fs-4"></i>
+    </a>
+    <button id="downloadPdf" class="btn btn-primary my-3">Download PDF</button>
+
+    <!-- Page Title -->
+    <h1 class="text-black">PCMR08</h1>
+    <div class="container my-5">
+        <div class="container-box mx-auto p-4" id="pdf-content">
+            <!-- Table -->
+            <table class="table table-hover border" >
+
+                <tr>
+                    <td class=company-title colspan="2">BLIZZARD CERAMICA LLP</td>
+                    <td class="company-title" colspan="2"> PROCEDURE</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Department : MR </td>
+                    <td colspan="2">Doc. No. : PC MR 08</td>
+
+                </tr>
+                <tr>
+                    <td colspan="2">Subject : IDENTIFICATION OF RISK & OPPORTUNITY </td>
+                    <td colspan="2">Rev. No. & Date :</td>
+
+                </tr>
+                <tr>
+                    <td colspan="2">ISO-9001 Clause No. : 6.1 </td>
+                    <td colspan="2">Page No. : 1 of 4</td>
+
+                </tr>
+            </table>
+
+            <div class="content">
+
+                <h3>
+                    1.	&nbsp; &nbsp;PURPOSE  :
+                </h3>
+                <strong style="margin-left:50px;">1.1</strong>
+                <p style="margin-left:80px;">
+
+                    This procedure has been developed by Company
+                    to define the controls necessary to analyze and
+                    evaluate potentially undesirable situations and
+                    to estimate the risk of their occurrence. This
+                    procedure also identifies techniques and tools
+                    used by Company for risk identification, assessment,
+                    and mitigation.
+                </p>
+
+                <h3>
+                    2.	&nbsp; &nbsp;SCOPE  :
+                </h3>
+                <strong style="margin-left:50px;">2.1</strong>
+                <p style="margin-left:80px;">
+
+                    Risk management activities defined by this
+                    procedure may be applied at any level of the
+                    organization, based on the situation and risk
+                    under consideration.
+                </p>
+                <strong style="margin-left:50px;">2.2</strong>
+                <p style="margin-left:80px;">
+
+                    The requirements of this procedure shall be
+                    applied as necessary to achieve desirable outcomes.
+                    Application of this procedure shall be at the direction
+                    of Company’ management.
+                </p>
+
+                <h3>
+                    3.	&nbsp; &nbsp;TERMS AND DEFINITIONS   :
+                </h3>
+                <ul>
+                    <li><strong>Residual Risk:</strong> Risks remaining after protective measures have been taken. </li>
+                    <li><strong>Risk:</strong> Combination of the probability of occurrence of a negative outcome and the severity of that outcome. </li>
+                    <li><strong>Risk Analysis: </strong>Systematic use of available information to identify potentially undesirable situations and to estimate the risk. </li>
+                    <li><strong>Risk Assessment:</strong> Overall process comprising a risk analysis and risk evaluation. </li>
+                    <li><strong>Risk Control:</strong> Process through which decisions are reached and protective measures are implemented for reducing risks to, or maintaining risk within, specified levels. </li>
+                    <li><strong>Risk Evaluation:</strong> Judgment, on the basis of risk analysis, of whether a risk which is acceptable has been achieved in a given context. </li>
+                    <li><strong>Risk Management:</strong> Systematic application of management policies, procedures and practices to the tasks of analyzing, evaluating and controlling risk. </li>
+                    <li><strong>Safety:</strong> Freedom from unacceptable risk. </li>
+                    <li><strong>Severity:</strong> Measure of the possible consequences of a potentially undesirable situation. </li>
+
+
+                </ul>
+
+                <table>
+                    <tr>
+                        <th colspan="3" width="35%">Prepared By</th>
+                        <th colspan="3" width="35%">Approved By</th>
+                        <th rowspan="3"></th>
+                    </tr>
+                    <tr>
+                        <td colspan="3" width="35%"></td>
+                        <td colspan="3" width="35%"></td>
+                    </tr>
+                    <tr>
+                        <th colspan="3" width="35%">MR</th>
+                        <th colspan="3" width="35%">PARTNER</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container my-5">
+        <div class="container-box mx-auto p-4">
+            <table class="header-table">
+                <tr>
+                    <td class="title" colspan="2">BLIZZARD CERAMICA LLP</td>
+                    <td class="company-name" colspan="2"> PROCEDURE</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Department : MR </td>
+                    <td colspan="2">Doc. No. : PC MR 08</td>
+
+                </tr>
+                <tr>
+                    <td colspan="2">Subject : IDENTIFICATION OF RISK & OPPORTUNITY </td>
+                    <td colspan="2">Rev. No. & Date :</td>
+
+                </tr>
+                <tr>
+                    <td colspan="2">ISO-9001 Clause No. : 6.1 </td>
+                    <td colspan="2">Page No. : 2 of 4</td>
+
+                </tr>
+            </table>
+            <br />
+            <br />
+
+            <div class="content">
+
+                <h3>
+                    4.	&nbsp; &nbsp;RISK MANAGEMENT PROCESS :
+                </h3>
+                <strong style="margin-left:50px;">4.1</strong>
+                <p style="margin-left:80px;">
+
+                    Company has established and maintains a process for
+                    identifying potentially undesirable situations associated
+                    with the provision of services, estimating and evaluating
+                    the associated risks, controlling these risks and monitoring
+                    the effectiveness of the control. This risk management process
+                    includes the following elements:
+                </p>
+                <ul style="margin-left:80px;">
+                    <li>Risk Analysis </li>
+                    <li>Risk Evaluation </li>
+                    <li>Risk Control </li>
+                    <li>Post- process Information                   </li>
+                </ul>
+
+                <h3>
+                    5.	&nbsp; &nbsp;RISK ANALYSIS PROCESS :
+                </h3>
+                <strong style="margin-left:50px;">5.1</strong>
+                <p style="margin-left:80px;">
+
+                    Risk Analysis shall be performed using a risk management plan that has
+                    been approved by the System facilitator or responsible manager. This plan
+                    shall include the system used for qualitative or quantitative categorization
+                    of probability estimates and determining their severity level (Risk matrix,
+                    Appendix A).
+                </p>
+                <strong style="margin-left:50px;">5.2</strong>
+                <p style="margin-left:80px;">
+
+                    Company shall use all available information and data to estimate the risk(s)
+                    for each potentially undesirable situation. Company shall record this estimation
+                    of the risk as part of the risk assessment file.
+                </p>
+
+
+                <h3>
+                    6.	&nbsp; &nbsp;RISK EVALUATION AND CONTROL :
+                </h3>
+                <strong style="margin-left:50px;">6.1</strong>
+                <p style="margin-left:80px;">
+
+                    Company shall use the criteria defined in the risk
+                    management plan to estimate the significance of each
+                    identified potentially undesirable situation (see example, Appendix A).
+                </p>
+                <strong style="margin-left:50px;">6.2</strong>
+                <p style="margin-left:80px;">
+
+                    Company shall identify risk control measures that are appropriate for
+                    reducing identified risks to an acceptable level. Company shall then
+                    implement the risk control measure(s) selected, and shall verify the
+                    effectiveness of any measures taken.
+                </p>
+
+
+                <table>
+                    <tr>
+                        <th colspan="3" width="35%">Prepared By</th>
+                        <th colspan="3" width="35%">Approved By</th>
+                        <th rowspan="3"></th>
+                    </tr>
+                    <tr>
+                        <td colspan="3" width="35%"></td>
+                        <td colspan="3" width="35%"></td>
+                    </tr>
+                    <tr>
+                        <th colspan="3" width="35%">MR</th>
+                        <th colspan="3" width="35%">PARTNER</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container my-5">
+        <div class="container-box mx-auto p-4" id="pdf-content">
+            <table class="header-table">
+                <tr>
+                    <td class="title" colspan="2">BLIZZARD CERAMICA LLP</td>
+                    <td class="company-name" colspan="2"> PROCEDURE</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Department : MR </td>
+                    <td colspan="2">Doc. No. : PC MR 08</td>
+
+                </tr>
+                <tr>
+                    <td colspan="2">Subject : IDENTIFICATION OF RISK & OPPORTUNITY </td>
+                    <td colspan="2">Rev. No. & Date :</td>
+
+                </tr>
+                <tr>
+                    <td colspan="2">ISO-9001 Clause No. : 6.1 </td>
+                    <td colspan="2">Page No. : 3 of 4</td>
+
+                </tr>
+            </table>
+
+            <div class="content">
+
+                <h3>
+                    7.	&nbsp; &nbsp;RESIDUAL RISK EVALUATION :
+                </h3>
+                <strong style="margin-left:50px;">7.1</strong>
+                <p style="margin-left:80px;">
+
+                    Company shall use the criteria defined in the risk management plan to evaluate any residual risk that remains after application of risk control measure(s).<br />
+                    Company shall apply further risk control measures if the residual risk does not meet the criteria.
+
+                </p>
+                <strong style="margin-left:50px;">7.2</strong>
+                <p style="margin-left:80px;">
+
+                    Company shall document all relevant information necessary to explain the residual risk(s) if the residual risk is judged acceptable.
+
+                </p>
+
+
+                <h3>
+                    8.	&nbsp; &nbsp;OPPORTUNITIES  :
+                </h3>
+                <strong style="margin-left:50px;">8.1</strong>
+                <p style="margin-left:80px;">
+
+                    The methods specified above may also be used for determining
+                    opportunities related to this procedure and its processes.
+                    Where such opportunities are identified, they should be noted
+                    as such as part of the final risk assessment report, and action
+                    taken as appropriate.
+                </p>
+                <br />
+                <br />
+                <br />
+                <strong style="margin-left:50px;">8.2</strong>
+                <p style="margin-left:80px;">
+                    Such opportunities shall also be considered as part of the organizations’
+                    annual Management Review process.
+                </p>
+
+
+                <h3>
+                    9.	&nbsp; &nbsp; RECORDS  :
+                </h3>
+                <strong style="margin-left:50px;">9.1</strong>
+                <p style="margin-left:80px;">
+
+                    Company shall maintain the following records as part of each risk management file:
+                </p>
+                <ul style="margin-left:80px;">
+                    <li>A copy of the risk analysis plan used, including the product or process analyzed, identification of the person(s) carrying out the analysis, and the analysis date; </li>
+                    <li>Records relating to the risk analysis process used, including techniques, methods and criteria; </li>
+                    <li>Results of the risk analysis performed; </li>
+                    <li>Records related to any options determined, as well as their implementation and verification;</li>
+                    <li>Any contingency plans developed as a result of the risk assessment. </li>
+
+                </ul>
+
+
+                <table>
+                    <tr>
+                        <th colspan="3" width="35%">Prepared By</th>
+                        <th colspan="3" width="35%">Approved By</th>
+                        <th rowspan="3"></th>
+                    </tr>
+                    <tr>
+                        <td colspan="3" width="35%"></td>
+                        <td colspan="3" width="35%"></td>
+                    </tr>
+                    <tr>
+                        <th colspan="3" width="35%">MR</th>
+                        <th colspan="3" width="35%">PARTNER</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <div class="container-box mx-auto p-4">
+            <table class="header-table">
+                <tr>
+                    <td class="title" colspan="2">BLIZZARD CERAMICA LLP</td>
+                    <td class="company-name" colspan="2"> PROCEDURE</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Department : MR </td>
+                    <td colspan="2">Doc. No. : PC MR 08</td>
+
+                </tr>
+                <tr>
+                    <td colspan="2">Subject : IDENTIFICATION OF RISK & OPPORTUNITY </td>
+                    <td colspan="2">Rev. No. & Date :</td>
+
+                </tr>
+                <tr>
+                    <td colspan="2">ISO-9001 Clause No. : 6.1 </td>
+                    <td colspan="2">Page No. : 3 of 4</td>
+
+                </tr>
+            </table>
+
+            <div class="content">
+
+                <h3>
+                    10.	&nbsp; &nbsp;RESIDUAL RISK EVALUATION :
+                </h3>
+                <table style="margin-bottom:50px;">
+                    <tr>
+                        <th rowspan="4"> Probability</th>
+                        <th colspan="6">Consequence if Event Occurs</th>
+                    </tr>
+                    <tr>
+                        <th rowspan="2"></th>
+                        <th rowspan="2">Insignificant</th>
+                        <th rowspan="2">Minor</th>
+                        <th rowspan="2">Moderate</th>
+                        <th rowspan="2">Major</th>
+                        <th rowspan="2">Catastrophic</th>
+                    </tr>
+                    <tr>
+                    </tr>
+                    <tr>
+                        <th>Risk Rating</th>
+                        <th>1</th>
+                        <th>2</th>
+                        <th>3</th>
+                        <th>4</th>
+                        <th>5</th>
+                    </tr>
+                    <tr>
+                        <th>Frequently</th>
+                        <th>1</th>
+                        <td style="background-color:green;"></td>
+                        <td style="background-color:green;"></td>
+                        <td style="background-color:yellow;"></td>
+                        <td style="background-color:yellow;"></td>
+                        <td style="background-color:red;"></td>
+                    </tr>
+                    <tr>
+                        <th>Likely</th>
+                        <th>2</th>
+                        <td style="background-color:green;"></td>
+                        <td style="background-color:green;"></td>
+                        <td style="background-color:yellow;"></td>
+                        <td style="background-color:red;"></td>
+                        <td style="background-color:red;"></td>
+                    </tr>
+                    <tr>
+                        <th>Moderate</th>
+                        <th>3</th>
+                        <td style="background-color:green;"></td>
+                        <td style="background-color:yellow"></td>
+                        <td style="background-color:yellow;"></td>
+                        <td style="background-color:red;"></td>
+                        <td style="background-color:red;"></td>
+                    </tr>
+                    <tr>
+                        <th>Unlikely</th>
+                        <th>4</th>
+                        <td style="background-color:yellow;"></td>
+                        <td style="background-color:yellow;"></td>
+                        <td style="background-color:red"></td>
+                        <td style="background-color:red;"></td>
+                        <td style="background-color:red;"></td>
+                    </tr>
+                    <tr>
+                        <th>Improbable</th>
+                        <th>5</th>
+                        <td style="background-color:yellow;"></td>
+                        <td style="background-color:red"></td>
+                        <td style="background-color:red;"></td>
+                        <td style="background-color:red;"></td>
+                        <td style="background-color:red;"></td>
+                    </tr>
+                </table>
+
+                <h3>
+                    Interpretation:
+                </h3>
+
+                <table style="text-align:center;  margin-bottom:50px;">
+                    <tr>
+                        <td colspan="2" style="background-color:red; color:black; width:20%">
+                            High
+                        </td>
+                        <td colspan="3">
+                            Unacceptable Risk: Update product or process design,
+                            add additional controls, review adequacy of current controls
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="background-color:yellow;color:black; width:20%">
+                            Med
+                        </td>
+                        <td colspan="3">
+                            Investigate further risk controls:
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="background-color:green; color:black; width:20%">
+                            Low
+                        </td>
+                        <td colspan="2">
+                            Risk is acceptable: No further risk
+                            controls required
+                        </td>
+                    </tr>
+                </table>
+
+
+                <h3>
+                    Definition:
+                </h3>
+                <table style="text-align:center; margin-bottom:150px;">
+                    <tr>
+                        <th colspan="2">Probability</th>
+                        <th colspan="2">Consequences</th>
+                    </tr>
+                    <tr>
+                        <th>Frequently</th>
+                        <td>Weekly</td>
+                        <th>Catastrophic</th>
+                        <td>Lawsuit</td>
+                    </tr>
+                    <tr>
+                        <th>Likely</th>
+                        <td> <90Days </td>
+                        <th>Major</th>
+                        <td>Refund</td>
+                    </tr>
+                    <tr>
+                        <th>Moderate</th>
+                        <td>>90Days</td>
+                        <th>Moderate</th>
+                        <td>Complaint</td>
+                    </tr>
+                    <tr>
+                        <th>Unlikely</th>
+                        <td>>1Yr</td>
+                        <th>Minor</th>
+                        <td>Dealy(>15days)</td>
+                    </tr>
+                    <tr>
+                        <th>Improbable</th>
+                        <td>>5Yrs</td>
+                        <th>Insignificant</th>
+                        <td>Dealy(<15days)</td>
+                    </tr>
+                </table>
+
+                <table>
+                    <tr>
+                        <th colspan="3" width="35%">Prepared By</th>
+                        <th colspan="3" width="35%">Approved By</th>
+                        <th rowspan="3"></th>
+                    </tr>
+                    <tr>
+                        <td colspan="3" width="35%"></td>
+                        <td colspan="3" width="35%"></td>
+                    </tr>
+                    <tr>
+                        <th colspan="3" width="35%">MR</th>
+                        <th colspan="3" width="35%">PARTNER</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("downloadPdf").addEventListener("click", () => {
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF("p", "mm", "a4");
+
+                // Get elements to hide
+                const btn = document.getElementById("downloadPdf");
+                const logo = document.getElementById("top-logo");
+
+                // Temporarily hide elements
+                if (btn) btn.style.display = "none";
+                if (logo) logo.style.display = "none";
+
+                pdf.html(document.body, {
+                    callback: function (pdf) {
+                        pdf.save("PCMR08.pdf");
+
+                        // Restore elements after PDF is generated
+                        if (btn) btn.style.display = "block";
+                        if (logo) logo.style.display = "block";
+                    },
+
+                    width: 210, // Full A4 width
+                    windowWidth: 1075 // Adjust scaling
+                });
+            });
+        });
+    </script>
+    </script>
+    <!-- Include jsPDF and html2canvas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</body>
+</html>

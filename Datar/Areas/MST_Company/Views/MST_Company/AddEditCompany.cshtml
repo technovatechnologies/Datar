@@ -1,0 +1,74 @@
+﻿@model Datar.Areas.MST_Company.Models.CompanyModel;
+@{
+    ViewData["Title"] = "Add Edit Company Page";
+}
+<br />
+<br />
+
+<div class="container">
+    <div class="card">
+
+        <br />
+        <br />
+        <div class="card-header d-flex justify-content-between">
+            <h3 class="">Add Edit Company</h3>
+        </div>
+
+        <div class="card-body">
+            <form role="form" method="post" asp-controller="MST_Company" asp-action="Save" asp-area="MST_Company" class="row g-3">
+
+                <div asp-validation-summary="All" class="text-danger"></div>
+
+                <!-- Account Details -->
+
+                <input type="hidden" asp-for="CompanyID" />
+                <div class="col-md-3">
+
+                    <label class="form-label" for="formValidationName"><span class="text-danger">* </span>CompanyName</label>
+                    <input class="form-control" required type="text" placeholder="CompanyName" asp-for="CompanyName" asp-area="Customer">
+                    <span asp-validation-for="CompanyName" class="text-danger"></span>
+                </div>
+                <div class="col-md-3">
+
+                    <label class="form-label" for="formValidationName"><span class="text-danger">* </span>City</label>
+                    <input class="form-control" required type="text" placeholder="City" asp-for="City" asp-area="Customer">
+                    <span asp-validation-for="City" class="text-danger"></span>
+                </div>
+                <div class="col-md-3">
+
+                    <label class="form-label" for="formValidationName"><span class="text-danger">* </span>Contact</label>
+                    <input class="form-control" required type="text" placeholder="Contact" asp-for="Contact" asp-area="Customer">
+                    <span asp-validation-for="Contact" class="text-danger"></span>
+                </div>
+                <div class="col-md-3">
+
+                    <label class="form-label" for="formValidationName"><span class="text-danger">* </span>Email</label>
+                    <input class="form-control" required type="text" placeholder="Email" asp-for="Email" asp-area="Customer">
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="col-md-3">
+
+                    <label class="form-label" for="formValidationName"><span class="text-danger">* </span>UserName</label>
+                    <input class="form-control" required type="text" placeholder="UserName" asp-for="UserName" asp-area="Customer">
+                    <span asp-validation-for="UserName" class="text-danger"></span>
+                </div>
+                <div class="col-md-3">
+
+                    <label class="form-label" for="formValidationName"><span class="text-danger">* </span>Password</label>
+                    <input class="form-control" required type="text" placeholder="Password" asp-for="Password" asp-area="Customer">
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+
+
+
+                <div class="col-12">
+                    <input type="submit" class="btn btn-primary" value="Submit" />
+
+                    <a asp-area="MST_Company" required asp-controller="MST_Company" asp-action="CompanyList" class="btn btn-dark"><span style="color:whitesmoke">Cancle</span></a>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+</div>

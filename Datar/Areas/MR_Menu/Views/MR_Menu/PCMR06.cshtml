@@ -1,0 +1,401 @@
+﻿<html>
+<head>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        @@page {
+            size: A4;
+            margin: 20mm;
+        }
+        /* Print styles */
+        @@media print {
+            body {
+                background-color:   #fff;
+            }
+        }
+
+        body {
+            font-family: 'Cambria Math';
+            margin: 20px;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        .container-box {
+            max-width: 900px;
+            background: white;
+            border: 2px solid #000;
+            padding: 20px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .header-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+
+
+
+
+
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        h2 {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        h3 {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        h5 {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .underline {
+            text-decoration: underline;
+        }
+
+        .term {
+            min-width: 150px;
+        }
+
+        .separator {
+        }
+
+        .entry {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+            margin-left: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: Arial, sans-serif;
+        }
+
+
+
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+            vertical-align: middle;
+        }
+
+
+        th {
+            text-align: center;
+            border: 1px solid black;
+            padding: 8px;
+            vertical-align: middle;
+            word-break: break-word;
+            white-space: normal;
+            overflow-wrap: break-word;
+        }
+
+        .company-title {
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            white-space: nowrap;
+            word-spacing:   5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Close Button -->
+    <a asp-area="MST_Company" id="top-logo" asp-controller="MST_Company" asp-action="CompanyDetail" class="btn btn-link position-absolute top-0 end-0 m-3 text-dark">
+        <i class="bi bi-x-lg fs-4"></i>
+    </a>
+    <button id="downloadPdf" class="btn btn-primary my-3">Download PDF</button>
+
+
+    <!-- Page Title -->
+    <h1 class="text-black">PCMR06</h1>
+    <div class="container my-5">
+        <div class="container-box mx-auto p-4" id="pdf-content">
+            <!-- Table -->
+            <table class="table table-hover border" >
+
+                <tr>
+                    <td class ="company-title" colspan="2">BLIZZARD CERAMICA LLP</td>
+                    <td class="company-title" colspan="2"> PROCEDURE</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Department : MR </td>
+                    <td colspan="2">Doc. No. : PC MR 06</td>
+
+                </tr>
+                <tr>
+                    <td colspan="2">Subject : Internal audit </td>
+                    <td colspan="2">Rev. No. & Date :</td>
+
+                </tr>
+                <tr>
+                    <td colspan="2">ISO-9001 Clause No. : 9.2 </td>
+                    <td colspan="2">Page No. : 1 of 2</td>
+
+                </tr>
+            </table>
+
+            <div class="content">
+                <h3>
+                    1.	&nbsp; &nbsp; PURPOSE   :
+                </h3>
+                <p style="margin-left:50px;">
+                    The purpose of this procedure is
+                    to describe the methodology for planning and implementing
+                    internal audit to verify whether quality management system
+                    requirements and related results are comply with planned arrangements
+                    and to determine the effectively implementation & maintenance of the quality
+                    management system.
+                </p>
+                <h3>
+                    2.	&nbsp; &nbsp; SCOPE   :
+                </h3>
+                <p style="margin-left:50px;">
+                    Applicable to all areas covered under the quality management system.
+                </p>
+                <h3>
+                    3.	&nbsp; &nbsp; RESPONSIBILITY    :
+                </h3>
+                <p style="margin-left:50px;">
+                    MR, auditors and auditee are responsible to implement and maintain this procedure.
+                </p>
+                <h3>
+                    4.	&nbsp; &nbsp; PURPOSE   :
+                </h3>
+                <h5 style="margin-left:50px;">
+                    4.1&nbsp; &nbsp;	DEFINITION &nbsp;:
+                </h5>
+                <ol style="list-style:lower-alpha;margin-left:100px;">
+                    <li><span class="term">&nbsp;Auditor</span> <span class="separator">:</span> The person who audits the department.</li>
+                    <li><span class="term">&nbsp;Auditee</span> <span class="separator">:</span> The persons being audited.</li>
+                    <li><span class="term">&nbsp;Compliance</span> <span class="separator">:</span> The observed results are as per the specified requirements.</li>
+                    <li><span class="term">&nbsp;Non-conformity</span> <span class="separator">:</span> The observed results are not as per the specified requirements.</li>
+                </ol>
+                <h5 style="margin-left:50px;">
+                    4.2	&nbsp; &nbsp;AUDITOR &nbsp;:
+                </h5>
+                <strong style="margin-left:90px;">4.2.1</strong>
+                <p style="margin-left:100px;">
+
+                    MR shall maintain the list of trained auditors in doc. no. DMR07. MR shall arrange to conduct the internal auditors training.
+                    After completion of training programme, test shall be carried out. After qualifying the test, auditor shall be considered as a trained auditor.
+                    Incase decided by the management, internal audit service shall be purchased from the outside agency.
+                </p>
+                <h5 style="margin-left:50px;">
+                    4.3	INTERNAL &nbsp; AUDIT &nbsp; PLAN &nbsp;:
+                </h5>
+                <strong style="margin-left:90px;">4.3.1</strong>
+                <p style="margin-left:100px;">
+
+                    Internal audit shall be conducted once in a year and MR shall prepare the internal audit plan in doc. no. DMR08.
+
+                </p><strong style="margin-left:90px;">4.3.2</strong>
+                <p style="margin-left:100px;">
+                    Based on the internal audit plan, MR shall prepare the internal audit schedule in form no. F MR 07, which includes
+                    the Scope of Audit, Name of the auditor, Name of the auditee, Department to be audited and Date & time.
+                </p>
+                <strong style="margin-left:90px;">4.3.3</strong>
+                <p style="margin-left:100px;">
+                    During preparation of audit programme MR shall ensures that auditors are independent of those activities having
+                    direct responsibility for the activity being audited. MR shall inform to all auditors and Audi tee’s in advance.
+
+                </p>
+                <strong style="margin-left:90px;">4.3.4</strong>
+                <p style="margin-left:100px;">
+
+                    In case any auditor / auditee can not able to present during the audit, the concerned person shall inform to
+                    MR and accordingly MR shall decide the necessary action.
+                </p>
+                <table>
+                    <tr>
+                        <th colspan="3" width="35%">Prepared By</th>
+                        <th colspan="3" width="35%">Approved By</th>
+                        <th rowspan="3"></th>
+                    </tr>
+                    <tr>
+                        <td colspan="3" width="35%"></td>
+                        <td colspan="3" width="35%"></td>
+                    </tr>
+                    <tr>
+                        <th colspan="3" width="35%">MR</th>
+                        <th colspan="3" width="35%">PARTNER</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+
+    <div class="container my-5" id="pdf-content">
+        <div class="container-box mx-auto p-4">
+            <table class="header-table">
+                <tr>
+                    <td  colspan="2" class="company-title">BLIZZARD CERAMICA LLP</td>
+                    <td class ="company-title" colspan="2"> PROCEDURE</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Department : MR </td>
+                    <td colspan="2">Doc. No. : PC MR 06</td>
+
+                </tr>
+                <tr>
+                    <td colspan="2">Subject : Internal audit </td>
+                    <td colspan="2">Rev. No. & Date :</td>
+
+                </tr>
+                <tr>
+                    <td colspan="2">ISO-9001 Clause No. : 9.2 </td>
+                    <td colspan="2">Page No. : 2 of 2</td>
+
+                </tr>
+            </table>
+
+            <div class="content">
+
+                <h5 style="margin-left:50px;">
+                    4.4&nbsp; &nbsp;	AUDIT &nbsp; PROCESS &nbsp; :
+                </h5>
+
+                <strong style="margin-left:90px;">4.4.1</strong>
+                <p style="margin-left:100px;">
+
+                    Auditor shall carry out internal audit as per the audit schedule and verify whether quality management system and related results comply with planned arrangements.
+                </p>
+                <strong style="margin-left:90px;">4.4.2</strong>
+                <p style="margin-left:100px;">
+
+                    Internal audit shall be conducted once in a year and MR shall prepare the internal audit plan in doc. no. DMR08.
+
+                </p><strong style="margin-left:90px;">4.4.2</strong>
+                <p style="margin-left:100px;">
+                    Auditor shall record the compliance or observations found during the audit.
+                </p>
+                <strong style="margin-left:90px;">4.4.3</strong>
+                <p style="margin-left:100px;">
+                    Auditee shall identify the root cause and decide the corrective action plan along
+                    with target date in audit NC report, form no. FMR08.
+                </p>
+                <strong style="margin-left:90px;">4.4.4</strong>
+                <p style="margin-left:100px;">
+
+                    After deciding the action, auditor shall submit the copy and observations to MR.
+                </p>
+                <strong style="margin-left:90px;">4.4.5</strong>
+                <p style="margin-left:100px;">
+
+                    MR shall review the same.
+                </p>
+                <h5 style="margin-left:50px;">
+                    4.5&nbsp; &nbsp; FOLLOW &nbsp;UP &nbsp; AUDITS &nbsp; & &nbsp;EFFECTIVENESS &nbsp; :
+                </h5>
+                <strong style="margin-left:90px;">4.5.1</strong>
+                <p style="margin-left:100px;">
+                    As per the target date, MR/auditor shall verify the corrective action taken
+                    by the auditee and collect the first copy. MR shall review the same and signed
+                    it as a formal closing non-conformity.
+                </p>
+                <strong style="margin-left:90px;">4.5.2</strong>
+                <p style="margin-left:100px;">
+                    After closing the non-conformity, MR shall hand over second copy to auditee as a
+                    closing of non-conformity and keep first copy with him as a record.
+                </p>
+                <strong style="margin-left:90px;">4.5.3</strong>
+                <p style="margin-left:100px;">
+                    MR shall review the effectiveness of corrective action taken during the next round
+                    of internal audit and record shall be maintained in audit non-conformity report form no. F MR 08.
+                </p>
+                <strong style="margin-left:90px;">4.5.4</strong>
+                <p style="margin-left:100px;">
+                    MR shall review the effectiveness of corrective action taken during the next round
+                    of internal audit and record shall be maintained in audit non-conformity report form no. F MR 08.
+                </p>
+                <strong style="margin-left:90px;">4.5.5</strong>
+                <p style="margin-left:100px;">
+                    MR shall prepare the Internal Audit NC summary report form no. of each round of Internal Audits.
+                </p>
+                <h3>
+                    Reference :
+                </h3>
+                <ol>
+                    <li><span class="term">&nbsp;List of Trained Auditors</span> <span class="separator">:</span> D MR 05</li>
+                    <li><span class="term">&nbsp;Internal Audit plan </span> <span class="separator">:</span> D MR 06</li>
+
+                </ol>
+                <h3>
+                    Records :
+                </h3>
+                <ol>
+                    <li><span class="term">&nbsp;Internal Audit schedule	</span> <span class="separator">:</span> F MR 04</li>
+                    <li><span class="term">&nbsp;Internal Audit plan </span> <span class="separator">:</span> F MR 05</li>
+
+                </ol>
+
+                <table>
+                    <tr>
+                        <th colspan="3" width="35%">Prepared By</th>
+                        <th colspan="3" width="35%">Approved By</th>
+                        <th rowspan="3"></th>
+                    </tr>
+                    <tr>
+                        <td colspan="3" width="35%"></td>
+                        <td colspan="3" width="35%"></td>
+                    </tr>
+                    <tr>
+                        <th colspan="3" width="35%">MR</th>
+                        <th colspan="3" width="35%">PARTNER</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("downloadPdf").addEventListener("click", () => {
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF("p", "mm", "a4");
+
+                // Get elements to hide
+                const btn = document.getElementById("downloadPdf");
+                const logo = document.getElementById("top-logo");
+
+                // Temporarily hide elements
+                if (btn) btn.style.display = "none";
+                if (logo) logo.style.display = "none";
+
+                pdf.html(document.body, {
+                    callback: function (pdf) {
+                        pdf.save("PCMR06.pdf");
+
+                        // Restore elements after PDF is generated
+                        if (btn) btn.style.display = "block";
+                        if (logo) logo.style.display = "block";
+                    },
+
+                    width: 210, // Full A4 width
+                    windowWidth: 1075 // Adjust scaling
+                });
+            });
+        });
+    </script>
+    <!-- Include jsPDF and html2canvas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</body>
+</html>

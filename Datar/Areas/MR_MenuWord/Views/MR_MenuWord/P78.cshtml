@@ -1,0 +1,229 @@
+﻿<html>
+<head>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <!-- Include jsPDF and html2canvas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <style>
+        @@page {
+            size: A4;
+            margin: 20mm;
+        }
+        /* Print styles */
+        @@media print {
+            body {
+                background-color: #fff;
+            }
+        }
+        body {
+            font-family: 'Cambria Math';
+            margin: 20px;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        .container-box {
+            max-width: 900px;
+            background: white;
+            border: 2px solid #000;
+            padding: 20px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .header-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+            .header-table td {
+                border: 1px solid #000;
+                padding: 8px;
+                text-align: left;
+            }
+
+        .title {
+            font-size: 20px;
+            font-weight: bold;
+            background: #ddd;
+        }
+
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+            vertical-align: middle;
+        }
+
+
+        th {
+            text-align: center;
+            border: 1px solid black;
+            padding: 8px;
+            vertical-align: middle;
+            word-break: break-word;
+            white-space: normal;
+            overflow-wrap: break-word;
+        }
+
+        .company-title {
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            white-space: nowrap;
+            word-spacing: 5px;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        h2 {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .underline {
+            text-decoration: underline;
+        }
+
+        .entry {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+            margin-left: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Close Button -->
+    <a asp-area="MST_Company" id="top-logo" asp-controller="MST_Company" asp-action="CompanyDetail" class="btn btn-link position-absolute top-0 end-0 m-3 text-dark">
+        <i class="bi bi-x-lg fs-4"></i>
+    </a>
+    <button id="downloadPdf" class="btn btn-primary my-3">Download PDF</button>
+
+    <div class="container my-5" id="pdf-content">
+
+        <div class="container-box mx-auto p-4">
+            <table class="header-table">
+                <tr>
+                    <td class="company-title" colspan="2">QUALITY MANUAL</td>
+                    <td class="company-title" colspan="2">BLIZZARD CERAMICA LLP</td>
+                </tr>
+                <tr>
+                    <td colspan="2">SUBJECT : Table of contents</td>
+                    <td>Edition No. : 01</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Standard : ISO 9001 : 2015</td>
+                    <td>Rev. No. & Date : 01 / 01.08.2024</td>
+                </tr>
+                <tr>
+                    <td colspan="3">Page No. : 59 of 79</td>
+                </tr>
+            </table>
+
+            <div class="content">
+                <h1>
+                    10. Improvement
+                </h1>
+                <h2>
+                    10.1 General
+                </h2>
+                <p>
+                    <strong>BCL</strong> is determine and select opportunities for
+                    improvement and implement any necessary actions 
+                    to meet customer requirements and enhance customer 
+                    satisfaction These is include
+                </p>
+                <p>
+                    Improving products and services to meet requirements as well as
+                    to address future needs and expectations
+                </p>
+                <p>
+                    Correcting, preventing or reducing undesired effects;<br />
+                    Improving the performance and effectiveness of the quality management system.
+
+                </p>
+                <p>
+                    Improvement is include correction, corrective action, continual improvement,
+                    breakthrough change, innovation and re-organization
+                </p>
+                <h2>
+                    10.2 Nonconformity and corrective action
+                </h2>
+                <p>
+                    <strong>10.2.1</strong>  When nonconformity occurs, including any arising from complaints, <strong>BCL</strong> is
+                    All nonconformities relating to product, process and quality system are investigated &
+                    the results are recorded. While investigating causes of non-conformances & deciding 
+                    corrective actions, the team identifies other products / situations where same or similar 
+                    nonconformance can occur.
+                </p>
+                <p>
+                    Corrective actions for nonconforming products and processes, detected in the organization are 
+                    recorded; analyzed, reviewed and necessary actions are taken. This will be the responsibility
+                    of IN CHARGE QA & PRD (respective production process In-charge) the corrective action and 
+                    preventive measures are implemented and their effectiveness is monitored.
+                </p>
+                <p>
+                    Corrective actions are taken on customer complaints; by analyzing the causes of the complaints 
+                    and taking suitable action to prevent their reoccurrence.
+                </p>
+                <p>
+                    The effectiveness of the identified corrective action is monitored through customer feed back
+                    and also the customers are kept aware of the corrective actions initiated, with each identified 
+                    corrective action.
+                </p>
+                <p>
+                    Documented Information
+                </p>
+                <table class="header-table">
+                    <tr>
+                        <td style="width:35%; height:5vh;"></td>
+                        <td style="width:35%; height:5vh;"></td>
+                        <td rowspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">Prepared By </td>
+                        <td class="text-center">Approved By</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("downloadPdf").addEventListener("click", () => {
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF("p", "mm", "a4");
+
+                // Get elements to hide
+                const btn = document.getElementById("downloadPdf");
+                const logo = document.getElementById("top-logo");
+
+                // Temporarily hide elements
+                if (btn) btn.style.display = "none";
+                if (logo) logo.style.display = "none";
+
+                html2canvas(document.getElementById("pdf-content")).then(canvas => {
+                    const imgData = canvas.toDataURL("image/png");
+                    const imgWidth = 190; // A4 width in mm
+                    const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+                    pdf.addImage(imgData, "PNG", 10, 10, imgWidth, imgHeight);
+                    pdf.save("QM_P78.pdf");
+
+                    // Restore elements after PDF is generated
+                    if (btn) btn.style.display = "block";
+                    if (logo) logo.style.display = "block";
+                });
+            });
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,670 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="widtd=device-widtd, initial-scale=1.0">
+    <title>DMR11</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <!-- Include jsPDF and html2canvas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        @@page {
+            size: A4;
+            margin: 20mm;
+        }
+        /* Print styles */
+        @@media print {
+            body {
+                background-color: #fff;
+            }
+        }
+        table {
+            width: auto;
+            border-collapse: collapse;
+            font-family: 'Cambria Math';
+        }
+
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+            vertical-align: middle;
+        }
+
+
+        th {
+            text-align: center;
+            border: 1px solid black;
+            padding: 8px;
+            vertical-align: middle;
+            word-break: break-word;
+            white-space: normal;
+            overflow-wrap: break-word;
+        }
+
+        .company-title {
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            white-space: nowrap;
+            word-spacing:  5px;
+        }
+        .footer-text {
+            font-size: 1rem;
+            font-weight: bold;
+            text-align: left;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4 border rounded p-4 bg-light">
+        <!-- Close Button -->
+        <a asp-area="MST_Company" id="top-logo" asp-controller="MST_Company" asp-action="CompanyDetail" class="btn btn-link position-absolute top-0 end-0 m-3 text-dark">
+            <i class="bi bi-x-lg fs-4"></i>
+        </a>
+        <button id="downloadPdf" class="btn btn-primary my-3">Download PDF</button>
+        <!-- Page Title -->
+        <h1 class="text-black">DMR11</h1>
+        <!-- Table -->
+        <div class="table-responsive" id="pdf-content">
+            <table class="table table-hover border" >
+                <tr>
+                    <td colspan="4" class="company-title">BLIZZARD CERAMICA LLP</td>
+                    <td colspan="7" class="company-title">Risk Identification and Monitoring Register</td>
+                    <td colspan="4">Doc. No. : D MR 11 <br />Rev. No. & Date :</td>
+                </tr>
+
+                <tr>
+                    <th>SR.NO.</th>
+                    <th>Department</th>
+                    <th>Process Description</th>
+                    <th>Failure Mode</th>
+                    <th>Risk Description</th>
+                    <th>Severity</th>
+                    <th>Probability</th>
+                    <th>Risk Level</th>
+                    <th>Risk Eliminate/ Reduce /Take</th>
+                    <th>Action Required</th>
+                    <th class="" style="width:40%;">Mitigation</th>
+                    <th>Effectiveness of action taken</th>
+                    <th>Severity</th>
+                    <th>Probability</th>
+                    <th>Risk Level</th>
+
+                </tr>
+
+                <tr>
+                    <td>1</td>
+                    <td>Top Management</td>
+                    <td>Business Growth</td>
+                    <td>Lack of communication skill for marketing</td>
+                    <td>Not getting Higher profitable customer</td>
+                    <td>Medium</td>
+                    <td>Medium</td>
+                    <td>Medium</td>
+                    <td>Reduce</td>
+                    <td>Yes</td>
+                    <td>
+                        Training provinding marketing
+                        dipartment for communication skil
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td></td>
+                    <td>Production planning and exicution</td>
+                    <td>Delay in production due to not proper planning</td>
+                    <td>Delay in delivery, customer unsatisfied</td>
+                    <td>Medium</td>
+                    <td>Medium</td>
+                    <td>Medium</td>
+                    <td>Reduce</td>
+                    <td>Yes</td>
+                    <td>
+                        We recrut  high experince
+                        person for production
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Production </td>
+                    <td>Make production planning for production</td>
+                    <td>Not achieve production due to breakdown, non availability of person, Electricity, Raw material Shortage</td>
+                    <td>Customer delivery schedule not fulfilled.</td>
+                    <td>Medium</td>
+                    <td>Low</td>
+                    <td>Medium</td>
+                    <td>Reduce</td>
+                    <td>Yes</td>
+                    <td>
+                        We Alart And Manage Stock For Barkedown And Shortage Of Raw Material   and for electricity we have power ganrator
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td></td>
+                    <td>Maintain availability of raw material</td>
+                    <td>Delay in Production</td>
+                    <td>Customer delivery schedule not fulfilled.</td>
+                    <td>Medium</td>
+                    <td>Low</td>
+                    <td>Medium</td>
+                    <td>Reduce</td>
+                    <td>Yes</td>
+                    <td>
+                        We Alart And Manage Stock
+                        For Raw Material
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td></td>
+                    <td>Work Instruction</td>
+                    <td>Not follow work instruction by operator.</td>
+                    <td>Time loss, Machine Breakdown, Not fulfil of product, process or system requirement.</td>
+                    <td>Low</td>
+                    <td>Low</td>
+                    <td>Low</td>
+                    <td>Reduce</td>
+                    <td>Yes</td>
+                    <td>
+                        Training provinding all opreator and worker for work intruction
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td></td>
+                    <td>Daily instruction given to operator before start the production</td>
+                    <td>Production start without given instruction by supervisor</td>
+                    <td>Material Rejection, Time loss</td>
+                    <td>Medium</td>
+                    <td>Low</td>
+                    <td>Medium</td>
+                    <td>Reduce</td>
+                    <td>Yes</td>
+                    <td>
+                        Training provinding all supervisor
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td></td>
+                    <td>Review availability of Tool, Gauge, Instruments, Drawing, Production Chart</td>
+                    <td>Unavailability of Tool, Gauge, Instruments, Drawing, Production Chart</td>
+                    <td>Delay Production, Material Rejection, Time  Loss</td>
+                    <td>Medium</td>
+                    <td>Low</td>
+                    <td>Medium</td>
+                    <td>Reduce</td>
+                    <td>Yes</td>
+                    <td>
+                        Training provinding all supervisor
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td></td>
+                    <td>Identification and Traceability</td>
+                    <td>Material Mix-up</td>
+                    <td>Material Reject, Time loss, Customer Complaint</td>
+                    <td>Medium</td>
+                    <td>Low</td>
+                    <td>Medium</td>
+                    <td>Reduce</td>
+                    <td>Yes</td>
+                    <td>
+                        we are makein code system for all material
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>Maintenance</td>
+                    <td>Preventive maintenance</td>
+                    <td>Not regular maintain preventive Maintenance</td>
+                    <td>Machine life reduce, machine Breakdown, Production Loss</td>
+                    <td>Medium</td>
+                    <td>Low</td>
+                    <td>Medium</td>
+                    <td>Reduce</td>
+                    <td>Yes</td>
+                    <td rowspan="4">
+                        Training provinding marketing
+                        dipartment for communication skil
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td></td>
+                    <td>Arability of Critical Spare Parts</td>
+                    <td>Not maintain Critical Spare Parts</td>
+                    <td>Production Loss, Delay delivery at customer end.</td>
+                    <td>Medium</td>
+                    <td>Low</td>
+                    <td>Medium</td>
+                    <td>Reduce</td>
+                    <td>Yes</td>
+
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td></td>
+                    <td>Timely action on machine Breakdown</td>
+                    <td>Delay to repair machine, Sources not available.</td>
+                    <td>Production Loss, Delay delivery at customer end.</td>
+                    <td>Medium</td>
+                    <td>Low</td>
+                    <td>Medium</td>
+                    <td>Reduce</td>
+                    <td>Yes</td>
+
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+
+
+                <tr>
+                    <td>11</td>
+                    <td></td>
+                    <td>Action Taken on Repetitive Breakdowns</td>
+                    <td>gnore breakdown issues</td>
+                    <td>Production Loss, Machine Life Reduce.</td>
+                    <td>Medium</td>
+                    <td>Low</td>
+                    <td>Medium</td>
+                    <td>Reduce</td>
+                    <td>Yes</td>
+
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>Quality Control</td>
+                    <td>Receiving Inspection of section bar</td>
+                    <td>Missed out Inspection of section Bar, Material Testing</td>
+                    <td>Material Rejection, Production Loss, Time loss, Finance Loss, Delay in delivery at customer end</td>
+                    <td>Medium</td>
+                    <td>Low</td>
+                    <td>Medium</td>
+                    <td>Reduce</td>
+                    <td>Yes</td>
+                    <td rowspan="5">
+                        Training provinding all opreator and worker and Qc team
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td></td>
+                    <td>Receiving inspection of Forged part</td>
+                    <td>Missed out inspection of Forging Parts</td>
+                    <td>Material Rejection, Production Loss, Time loss, Finance Loss, Delay in delivery at customer end</td>
+                    <td>Medium</td>
+                    <td>Low</td>
+                    <td>Medium</td>
+                    <td>Reduce</td>
+                    <td>Yes</td>
+
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td></td>
+                    <td>Setup approval</td>
+                    <td>Start production without setup approval before the New product, Tool Insert Charge, Machine breakdown, </td>
+                    <td>Material Rejection, Production Loss, Time loss, Finance Loss, Delay in delivery at customer end</td>
+                    <td>Medium</td>
+                    <td>Low</td>
+                    <td>Medium</td>
+                    <td>Reduce</td>
+                    <td>Yes</td>
+
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td></td>
+                    <td>In process Inspection</td>
+                    <td>In process inspection not done by supervisor, Instrument not able to give proper reading</td>
+                    <td>Material Rejection, Production Loss, Time loss, Finance Loss, Delay in delivery at customer end</td>
+                    <td>Medium</td>
+                    <td>Low</td>
+                    <td>Medium</td>
+                    <td>Reduce</td>
+                    <td>Yes</td>
+
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>16</td>
+                    <td></td>
+                    <td>Final Inspection</td>
+                    <td>Inspection not done as per define criteria, inspection not done by supervisor, Instrument not able to give proper reading</td>
+                    <td>Customer Complain Received, Customer loss, Finance Loss,</td>
+                    <td>Medium</td>
+                    <td>Low</td>
+                    <td>Medium</td>
+                    <td>Reduce</td>
+                    <td>Yes</td>
+
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr style="height:2vh;">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>17</td>
+                    <td></td>
+                    <td>Quality Assurance Plan</td>
+                    <td>QAP not make as per requirement, QAP not Followed</td>
+                    <td>Material Rejection, Customer Complaint, Time Loss</td>
+                    <td>Medium</td>
+                    <td>Low</td>
+                    <td>Medium</td>
+                    <td>Reduce</td>
+                    <td>Yes</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>18</td>
+                    <td></td>
+                    <td>Identification and Traceability</td>
+                    <td>Material Mix-up</td>
+                    <td>Material Reject, Time loss, Customer Complaint</td>
+                    <td>Medium</td>
+                    <td>Low</td>
+                    <td>Medium</td>
+                    <td>Reduce</td>
+                    <td>Yes</td>
+                    <td>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>19</td>
+                    <td>Calibration</td>
+                    <td>Make Calibration as per schedule</td>
+                    <td>Calibration not done as per schedule</td>
+                    <td>Instrument Fail to cheque actual parameter. Material rejection, Customer Complaints, Customer Loss</td>
+                    <td>Medium</td>
+                    <td>Low</td>
+                    <td>Medium</td>
+                    <td>Reduce</td>
+                    <td>Yes</td>
+                    <td rowspan="3">
+                        Training provinding  all
+                        Qc team
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>20</td>
+                    <td></td>
+                    <td>Calibration agency not proper selected.</td>
+                    <td>Calibration not proper</td>
+                    <td>Material rejection, Customer Complaints, Customer Loss</td>
+                    <td>Medium</td>
+                    <td>Low</td>
+                    <td>Medium</td>
+                    <td>Reduce</td>
+                    <td>Yes</td>
+
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>21</td>
+                    <td></td>
+                    <td>Verification of Calibration report and traceability Report</td>
+                    <td>Missed out to check Error of Instrument, and not use calibrated instrument which are  calibrate to our instrument. </td>
+                    <td>Fail to check actual reading. Material reject at our or customer end.</td>
+                    <td>Medium</td>
+                    <td>Low</td>
+                    <td>Medium</td>
+                    <td>Reduce</td>
+                    <td>Yes</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>22</td>
+                    <td>Marketing</td>
+                    <td>Brand Risk</td>
+                    <td>risk of losing brand value</td>
+                    <td>failures such as a rebranding</td>
+                    <td>Medium</td>
+                    <td>Low</td>
+                    <td>Medium</td>
+                    <td>Reduce</td>
+                    <td>Yes</td>
+                    <td rowspan="3">alwase find new market and</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>23</td>
+                    <td></td>
+                    <td>Product Development</td>
+                    <td>developing and launching a new product</td>
+                    <td>failures such as a product</td>
+                    <td>Medium</td>
+                    <td>Low</td>
+                    <td>Medium</td>
+                    <td>Reduce</td>
+                    <td>Yes</td>
+
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>24</td>
+                    <td></td>
+                    <td>Price risk</td>
+                    <td>Price related risk such as a price war.</td>
+                    <td>loss of profit</td>
+                    <td>Medium</td>
+                    <td>Low</td>
+                    <td>Medium</td>
+                    <td>Reduce</td>
+                    <td>Yes</td>
+
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>25</td>
+                    <td>purchase</td>
+                    <td>avebility of row matiraial </td>
+                    <td>avebility of row matiraial</td>
+                    <td>Stop Production</td>
+                    <td>Medium</td>
+                    <td>Low</td>
+                    <td>Low</td>
+                    <td>Reduce</td>
+                    <td>Yes</td>
+                    <td rowspan="2">alwase find new batter supplier</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>26</td>
+                    <td></td>
+                    <td>PRICE HIGH OF ROW MATIRAIAL</td>
+                    <td>PRICE HIGH OF ROW MATIRAIAL</td>
+                    <td>Stop Production</td>
+                    <td>Medium</td>
+                    <td>Low</td>
+                    <td>Low</td>
+                    <td>Reduce</td>
+                    <td>Yes</td>
+
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+
+
+            </table>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("downloadPdf").addEventListener("click", () => {
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF("p", "mm", "a4");
+
+                const pdfContent = document.getElementById("pdf-content");
+
+                // Hide elements temporarily
+                const btn = document.getElementById("downloadPdf");
+                const logo = document.getElementById("top-logo");
+
+                if (btn) btn.style.display = "none";
+                if (logo) logo.style.display = "none";
+
+                html2canvas(pdfContent, { scale: 2 }).then(canvas => {
+                    const imgData = canvas.toDataURL("image/png");
+
+                    const imgWidth = 210; // A4 width in mm
+                    const pageHeight = 297; // A4 height in mm
+                    const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+                    let heightLeft = imgHeight;
+                    let position = 0;
+
+                    pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
+                    heightLeft -= pageHeight;
+
+                    while (heightLeft > 0) {
+                        position -= pageHeight;
+                        pdf.addPage();
+                        pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
+                        heightLeft -= pageHeight;
+                    }
+
+                    pdf.save("DMR11.pdf");
+
+                    // Restore elements after PDF is generated
+                    if (btn) btn.style.display = "block";
+                    if (logo) logo.style.display = "block";
+                });
+            });
+        });
+    </script>
+
+</body>
+</html> 

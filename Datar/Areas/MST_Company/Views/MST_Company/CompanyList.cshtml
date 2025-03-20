@@ -1,0 +1,243 @@
+﻿@using System.Data;
+@model DataTable;
+
+@{
+    ViewData["Title"] = "Company List Page";
+
+}
+<!-- Include Font Awesome for Icons & SweetAlert2 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    function confirmDelete(companyID) {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#d33",
+            cancelButtonColor: "#3085d6",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Redirect to delete action
+                window.location.href = "/MST_Company/MST_Company/Delete?CompanyID=" + companyID;
+            }
+        });
+    }
+</script>
+
+
+
+
+
+<div class="container mt-5">
+    <div class="card">
+        @if (TempData["Message"] != null)
+        {
+            <div class="alert alert-success">@TempData["Message"]</div>
+        }
+        @if (TempData["DeleteMessage"] != null)
+        {
+            <div class="alert alert-danger">@TempData["DeleteMessage"]</div>
+        }
+        @if (TempData["MessageFKReference"] != null)
+        {
+            <div class="alert alert-danger">@TempData["MessageFKReference"]</div>
+        }
+
+        <div class="container mt-5">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between" style="background-color:#5F4C4C;">
+                    <h3 class="" style="color:white;">Company List</h3>
+                    <div>
+                        <form asp-area="MST_Company" asp-controller="MST_Company" asp-action="AddEdit" class="d-inline">
+                            <button type="submit" class="btn btn-outline-warning me-2">Add New Company</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card-body">
+            <input type="hidden" id="selectedCompanyID" />
+
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Company Name</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="companyTableBody">
+                    @foreach (DataRow dr in Model.Rows)
+
+                    {
+                        <tr data-companyid="@dr["CompanyID"]" class="company-row">
+                            <td>
+                                <a href="/MST_Company/MST_Company/CompanyDetail?CompanyID=@dr["CompanyID"]"
+                                   style="text-decoration:none; color:black;">
+                                    @dr["CompanyName"]
+                                </a>
+                            </td>
+
+                            <td class="text-end">
+                                <!-- Delete Button -->
+                                <form method="post" asp-area="MST_Company" asp-controller="MST_Company" asp-action="Delete" class="d-inline">
+                                    <input type="hidden" name="CompanyID" value="@dr["CompanyID"]">
+                                    <button type="button" class="btn btn-link text-danger" onclick="confirmDelete('@dr["CompanyID"]')">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </form>
+
+                                <!-- Edit Button -->
+                                <form method="get" asp-area="MST_Company" asp-controller="MST_Company" asp-action="AddEdit" class="d-inline">
+                                    <input type="hidden" name="CompanyID" value="@dr["CompanyID"]">
+                                    <button type="submit" class="btn btn-link text-warning">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                </form>
+
+                                <!-- Detail Button -->
+                                <form method="get" asp-area="MST_Company" asp-controller="MST_Company" asp-action="Detail" class="d-inline">
+                                    <input type="hidden" name="CompanyID" value="@dr["CompanyID"]">
+                                    <button type="submit" class="btn btn-link text-dark">
+                                        <i class="fas fa-file-alt"></i> <!-- Note Icon for Detail -->
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+
+
+
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        let searchQuery = "";
+
+        $(document).on("keydown", function (event) {
+            let key = event.key.toLowerCase();
+
+            // Handle backspace to remove the last character
+            if (event.key === "Backspace") {
+                searchQuery = searchQuery.slice(0, -1);
+            }
+            // Allow only printable characters (letters, numbers, space)
+            else if (event.key.length === 1) {
+                searchQuery += key;
+            }
+
+            console.log("Current search:", searchQuery); // Debugging
+
+            // Filter table rows dynamically
+            $("tbody tr").each(function () {
+                let rowText = $(this).text().toLowerCase(); // Get row text
+                if (rowText.includes(searchQuery)) {
+                    $(this).show(); // Show if match
+                } else {
+                    $(this).hide(); // Hide if not match
+                }
+            });
+
+            // If search query is empty, show all rows
+            if (searchQuery === "") {
+                $("tbody tr").show();
+            }
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        let searchQuery = "";
+        let selectedRow = null;
+
+        // Handle search input via typing
+        $(document).on("keydown", function (event) {
+            let key = event.key.toLowerCase();
+
+            // If arrow keys are pressed, navigate rows instead of filtering
+            if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+                navigateRows(event.key);
+                return; // Stop search when navigating rows
+            }
+
+            // Handle Enter key to open Edit page
+            if (event.key === "Enter" && selectedRow) {
+                let companyID = $(selectedRow).data("companyid");
+                if (companyID) {
+                    window.location.href = "/MST_Company/MST_Company/AddEdit?CompanyID=" + companyID;
+                }
+                return;
+            }
+
+            // Handle Backspace to remove last character
+            if (event.key === "Backspace") {
+                searchQuery = searchQuery.slice(0, -1);
+            }
+            // Allow only printable characters (letters, numbers, space)
+            else if (event.key.length === 1) {
+                searchQuery += key;
+            }
+
+            console.log("Current search:", searchQuery); // Debugging
+
+            // Filter table rows dynamically
+            $("tbody tr").each(function () {
+                let rowText = $(this).text().toLowerCase(); // Get row text
+                if (rowText.includes(searchQuery)) {
+                    $(this).show(); // Show if match
+                } else {
+                    $(this).hide(); // Hide if not match
+                }
+            });
+
+            // If no search results, show "No Record Found"
+            if ($("tbody tr:visible").length === 0) {
+                if ($("#noRecordRow").length === 0) {
+                    $("tbody").append('<tr id="noRecordRow"><td colspan="2" class="text-center">No Record Found</td></tr>');
+                }
+            } else {
+                $("#noRecordRow").remove(); // Remove "No Record Found" if rows are visible
+            }
+        });
+
+        // Click on a row to select it
+        $("tbody tr").on("click", function () {
+            selectRow($(this));
+        });
+
+        // Function to select row (highlight)
+        function selectRow(row) {
+            if (selectedRow) {
+                $(selectedRow).removeClass("table-primary"); // Remove highlight from previous
+            }
+            selectedRow = row;
+            $(selectedRow).addClass("table-primary"); // Highlight selected row
+        }
+
+        // Function to navigate rows with arrow keys
+        function navigateRows(direction) {
+            if (!selectedRow) {
+                selectedRow = $("tbody tr:visible").first();
+            } else {
+                let nextRow = direction === "ArrowDown" ? $(selectedRow).nextAll(":visible").first() : $(selectedRow).prevAll(":visible").first();
+                if (nextRow.length) {
+                    selectRow(nextRow);
+                }
+            }
+        }
+    });
+</script>

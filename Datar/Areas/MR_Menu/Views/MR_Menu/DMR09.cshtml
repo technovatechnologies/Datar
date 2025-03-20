@@ -1,0 +1,175 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DMR09</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <!-- Include jsPDF and html2canvas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        @@page {
+            size: A4;
+            margin: 20mm;
+        }
+        /* Print styles */
+        @@media print {
+            body {
+                background-color: #fff;
+            }
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Cambria Math';
+        }
+
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+            vertical-align: middle;
+        }
+
+
+        th {
+            text-align: center;
+            border: 1px solid black;
+            padding: 8px;
+            vertical-align: middle;
+            word-break: break-word;
+            white-space: normal;
+            overflow-wrap: break-word;
+        }
+
+        .company-title {
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            white-space: nowrap;
+            word-spacing:5px;
+        }
+
+        .footer-text {
+            font-size: 1rem;
+            font-weight: bold;
+            text-align: left;
+            padding: 10px;
+        }
+
+        .yellow {
+            width: 254px;
+            height: 100px;
+        }
+
+        .red {
+            color: white;
+            width: 254px;
+            height: 100px;
+        }
+
+        .green {
+            color: white;
+            width: 254px;
+            height: 100px;
+        }
+
+        .high {
+            width: 254px;
+            height: 100px;
+        }
+
+
+
+        .gray {
+            width: 254px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4 border rounded p-4 bg-light">
+        <!-- Close Button -->
+        <a asp-area="MST_Company" id="top-logo" asp-controller="MST_Company" asp-action="CompanyDetail" class="btn btn-link position-absolute top-0 end-0 m-3 text-dark">
+            <i class="bi bi-x-lg fs-4"></i>
+        </a>
+        <button id="downloadPdf" class="btn btn-primary my-3">Download PDF</button>
+        <!-- Page Title -->
+        <h1 class="text-black">DMR09</h1>
+        <!-- Table -->
+        <table class="table table-hover border" id="pdf-content">
+            <tr>
+                <th colspan="2" class="company-title">BLIZZARD CERAMICA LLP</th>
+                <th colspan="2" class="company-title">RISK LEVEL CHART</th>
+                <th colspan="1" >Doc. No.: D MR 09<br>Rev. No. & Date: </th>
+            </tr>
+            <tr>
+                <td rowspan="3"><b>Likelihood</b></td>
+                <td class="high" >High</td>
+                <td class="yellow" style="background-color:yellow;">Yellow</td>
+                <td class="red" style="background-color:red;">Red</td>
+                <td class="red" style="background-color:red;">Red</td>
+            </tr>
+            <tr>
+                <td>Medium</td>
+                <td class="green" style="background-color:green;">Green</td>
+                <td class="yellow" style="background-color:yellow;">Yellow</td>
+                <td class="red" style="background-color:red">Red</td>
+            </tr>
+            <tr>
+                <td>Low</td>
+                <td class="green" style="background-color:green;">Green</td>
+                <td class="green" style="background-color:green;">Green</td>
+                <td class="yellow" style="background-color:yellow;">Yellow</td>
+            </tr>
+            <tr>
+                <td class="gray" colspan="2" style="background-color:gray;"></td>
+                <td>Low</td>
+                <td>Medium</td>
+                <td>High</td>
+            </tr>
+            <tr>
+                <td colspan="5"><b>Consequences</b></td>
+            </tr>
+            <tr>
+                <td colspan="5">Approved By of PARTNER:</td>
+            </tr>
+        </table>
+
+    </div>
+    <script>
+                document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("downloadPdf").addEventListener("click", () => {
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF("p", "mm", "a4");
+
+                // Get elements to hide
+                const btn = document.getElementById("downloadPdf");
+                const logo = document.getElementById("top-logo");
+
+                // Temporarily hide elements
+                if (btn) btn.style.display = "none";
+                if (logo) logo.style.display = "none";
+
+                html2canvas(document.getElementById("pdf-content")).then(canvas => {
+                    const imgData = canvas.toDataURL("image/png");
+                    const imgWidth = 190; // A4 width in mm
+                    const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+                    pdf.addImage(imgData, "PNG", 10, 10, imgWidth, imgHeight);
+                    pdf.save("DMR09.pdf");
+
+                    // Restore elements after PDF is generated
+                    if (btn) btn.style.display = "block";
+                    if (logo) logo.style.display = "block";
+                });
+            });
+        });
+
+    </script>
+</body>
+</html> 

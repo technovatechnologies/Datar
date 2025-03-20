@@ -1,0 +1,824 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FPR03</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        @@page {
+            size: A4;
+            margin: 20mm;
+        }
+        /* Print styles */
+        @@media print {
+            body {
+                background-color:   #fff;
+            }
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Cambria Math';
+        }
+
+
+        .doc-title {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .footer-text {
+            font-size: 1rem;
+            font-weight: bold;
+            text-align: left;
+            padding: 10px;
+        }
+
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+            vertical-align: middle;
+        }
+
+
+        th {
+            text-align: center;
+            border: 1px solid black;
+            padding: 8px;
+            vertical-align: middle;
+            word-break: break-word;
+            white-space: normal;
+            overflow-wrap: break-word;
+        }
+
+        .company-title {
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            white-space: nowrap;
+            word-spacing:   5px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container mt-4 border rounded p-4 bg-light">
+        <!-- Close Button -->
+        <a asp-area="MST_Company" id="top-logo" asp-controller="MST_Company" asp-action="CompanyDetail" class="btn btn-link position-absolute top-0 end-0 m-3 text-dark">
+            <i class="bi bi-x-lg fs-4"></i>
+        </a>
+        <button id="downloadPdf" class="btn btn-primary my-3">Download PDF</button>
+
+        <table class="table table-hover border" id="pdf-content">
+            <tr>
+                <td colspan="6" class="company-title">
+                    BLIZZARD VITRIFIED LLP
+                </td>
+                <td colspan="25" class="company-title">
+                    PREVENTIVE MAINTENANCE RECORD
+                </td>
+                <td colspan="8">
+                    Form No. : F MT 02
+                    <br>
+                    Rev. No. & Date  :  02/01.11.2023
+
+                </td>
+            </tr>
+            <tr>
+                <td colspan="11" class="section-title">
+                    M/C Description :
+
+                </td>
+                <td colspan="11" style="border-left:hidden;">
+                    DRYER
+
+
+                </td>
+                <td colspan="11" style="border-left:hidden;">
+                    YEAR 2024
+                </td>
+                <td colspan="9" style="border-left:hidden;">
+                    Code No. :DRY01
+
+                </td>
+
+            </tr>
+            <tr>
+                <th style="width:5%"></th>
+                <th colspan="9">Activity &nbsp; Description - Daily</th>
+                <th colspan="11">Activity &nbsp; Description - Weekly</th>
+                <th colspan="11">Activity &nbsp; Description - Monthly</th>
+                <th colspan="8">Activity &nbsp; Description - Yearly</th>
+            </tr>
+
+            <!-- Rows -->
+            <tr>
+                <td>1</td>
+                <td colspan="9">
+                    HOLDER BEARING
+
+
+                </td>
+                <td colspan="11">
+                    BLOWER BALT N OIL CHACK
+
+
+                </td>
+                <td colspan="11">
+                </td>
+                <td colspan="18"></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td colspan="9">
+                    OIL
+
+
+                </td>
+                <td colspan="11">
+                    DRIVE CHECK
+                </td>
+                <td colspan="11">
+                </td>
+                <td colspan="8"></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td colspan="9">
+                    BERING CHAVK
+
+
+                </td>
+                <td colspan="11"></td>
+                <td colspan="11">
+                </td>
+                <td colspan="8"></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td colspan="9">
+                    ROLLER CHECK
+
+                </td>
+                <td colspan="11"></td>
+                <td colspan="11"></td>
+                <td colspan="8"></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td colspan="9">
+                </td>
+                <td colspan="11"></td>
+                <td colspan="11"></td>
+                <td colspan="8"></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td colspan="9"></td>
+                <td colspan="11"></td>
+                <td colspan="11"></td>
+                <td colspan="8"></td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td colspan="9"></td>
+                <td colspan="11"></td>
+                <td colspan="11"></td>
+                <td colspan="8"></td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td colspan="9"></td>
+                <td colspan="11"></td>
+                <td colspan="11"></td>
+                <td colspan="8"></td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td colspan="9"></td>
+                <td colspan="11"></td>
+                <td colspan="11"></td>
+                <td colspan="8"></td>
+            </tr>
+            <tr>
+                <th>Month/Day</th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>7</th>
+                <th>8</th>
+                <th>9</th>
+                <th>10</th>
+                <th>11</th>
+                <th>12</th>
+                <th>13</th>
+                <th>14</th>
+                <th>15</th>
+                <th>16</th>
+                <th>17</th>
+                <th>18</th>
+                <th>19</th>
+                <th>20</th>
+                <th>21</th>
+                <th>22</th>
+                <th>23</th>
+                <th>24</th>
+                <th>25</th>
+                <th>26</th>
+                <th>27</th>
+                <th>28</th>
+                <th>29</th>
+                <th>30</th>
+                <th>31</th>
+                <th colspan="5">Weekly</th>
+                <th>Remarks</th>
+            </tr>
+            <tr>
+                <td class="month-col">January</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
+
+
+            </tr>
+            <tr>
+                <td class="month-col">February</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>x</td>
+                <td>x</td>
+                <td>x</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>x</td>
+                <td></td>
+
+
+            </tr>
+            <tr>
+                <td class="month-col">March</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>x</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="month-col">April</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>x</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>x</td>
+                <td></td>
+
+            </tr>
+            <tr>
+                <td class="month-col">May</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
+            </tr>
+            <tr>
+                <td class="month-col">June</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>x</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>x</td>
+                <td></td>
+
+            </tr>
+            <tr>
+                <td class="month-col">July</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>x</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="month-col">August</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
+            </tr>
+            <tr>
+                <td class="month-col">September</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>x</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>x</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="month-col">Octomber</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>x</td>
+                <td></td>
+
+            </tr>
+            <tr>
+                <td class="month-col">November</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>x</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
+            </tr>
+            <tr>
+                <td class="month-col">December</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>x</td>
+                <td></td>
+
+            </tr>
+            <tr>
+                <th>MONTH</th>
+                <th colspan="3">January</th>
+                <th colspan="3">February</th>
+                <th colspan="3">March</th>
+                <th colspan="3">April</th>
+                <th colspan="3">May</th>
+                <th colspan="3">June</th>
+                <th colspan="3">July</th>
+                <th colspan="3">August</th>
+                <th colspan="3">September</th>
+                <th colspan="3">October</th>
+                <th colspan="3">November</th>
+                <th colspan="3">December</th>
+                <th>Yearly</th>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td colspan="3"></td>
+                <td colspan="3"></td>
+                <td colspan="3"></td>
+                <td colspan="3"></td>
+                <td colspan="3"></td>
+                <td colspan="3"></td>
+                <td colspan="3"></td>
+                <td colspan="3"></td>
+                <td colspan="3"></td>
+                <td colspan="3"></td>
+                <td colspan="3"></td>
+                <td colspan="3"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Signature</th>
+                <td colspan="3"></td>
+                <td colspan="3"></td>
+                <td colspan="3"></td>
+                <td colspan="3"></td>
+                <td colspan="3"></td>
+                <td colspan="3"></td>
+                <td colspan="3"></td>
+                <td colspan="3"></td>
+                <td colspan="3"></td>
+                <td colspan="3"></td>
+                <td colspan="3"></td>
+                <td colspan="3"></td>
+                <td></td>
+            </tr>
+
+        </table>
+
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("downloadPdf").addEventListener("click", () => {
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF("p", "mm", "a4");
+
+                // Get elements to hide
+                const btn = document.getElementById("downloadPdf");
+                const logo = document.getElementById("top-logo");
+
+                // Temporarily hide elements
+                if (btn) btn.style.display = "none";
+                if (logo) logo.style.display = "none";
+
+                html2canvas(document.getElementById("pdf-content")).then(canvas => {
+                    const imgData = canvas.toDataURL("image/png");
+                    const imgWidth = 190; // A4 width in mm
+                    const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+                    pdf.addImage(imgData, "PNG", 10, 10, imgWidth, imgHeight);
+                    pdf.save("DRY01.pdf");
+
+                    // Restore elements after PDF is generated
+                    if (btn) btn.style.display = "block";
+                    if (logo) logo.style.display = "block";
+                });
+            });
+        });
+
+    </script>
+    <!-- Include jsPDF and html2canvas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</body>
+</html>

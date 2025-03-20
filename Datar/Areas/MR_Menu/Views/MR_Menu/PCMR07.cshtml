@@ -1,0 +1,311 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quality Objectives 2024</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        @@page {
+            size: A4;
+            margin: 20mm;
+        }
+        /* Print styles */
+        @@media print {
+            body {
+                background-color:   #fff;
+            }
+        }
+
+        body {
+            font-family: 'Cambria Math';
+            margin: 20px;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        .container-box {
+            max-width: 900px;
+            background: white;
+            border: 2px solid #000;
+            padding: 20px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: Arial, sans-serif;
+            margin-bottom: 20px;
+        }
+
+
+
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        h2 {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        h3 {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        h5 {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+
+        .underline {
+            text-decoration: underline;
+        }
+
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+            vertical-align: middle;
+        }
+
+
+        th {
+            text-align: center;
+            border: 1px solid black;
+            padding: 8px;
+            vertical-align: middle;
+            word-break: break-word;
+            white-space: normal;
+            overflow-wrap: break-word;
+        }
+
+        .company-title {
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            white-space: nowrap;
+            word-spacing:   5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Close Button -->
+    <a asp-area="MST_Company" id="top-logo" asp-controller="MST_Company" asp-action="CompanyDetail" class="btn btn-link position-absolute top-0 end-0 m-3 text-dark">
+        <i class="bi bi-x-lg fs-4"></i>
+    </a>
+    <button id="downloadPdf" class="btn btn-primary my-3">Download PDF</button>
+
+    <!-- Page Title -->
+    <h1 class="text-black">PCMR07</h1>
+    <div class="container my-5">
+        <div class="container-box mx-auto p-4" id="pdf-content">
+            <!-- Table -->
+            <table class="table table-hover border" >
+
+                <tr>
+                    <th colspan="2">BLIZZARD CERAMICA LLP</th>
+                    <th colspan="2">PROCEDURE</th>
+                </tr>
+                <tr>
+                    <td colspan="2">Department : MR</td>
+                    <td colspan="2">Doc. No. : PC MR 07</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Subject : CorrectiveAction</td>
+                    <td colspan="2">Rev. No. & Date : 01 / 01.08.2024</td>
+                </tr>
+                <tr>
+                    <td colspan="2">ISO-9001 Clause No. : 10.2</td>
+                    <td colspan="2">Page No. : 1 of 2</td>
+                </tr>
+            </table>
+
+            <div class="content">
+
+                <h2>
+                    1.	PURPOSE &nbsp;  :
+                </h2>
+                <p style="margin-left:30px;">
+                    The purpose of this procedure is to describe method for taking corrective action to eliminate
+                    the cause of product / process / system non-conformities including customer complaints in
+                    order to prevent recurrence.
+                </p>
+
+                <h2>
+                    2.	SCOPE  &nbsp; :
+                </h2>
+                <p style="margin-left:30px;">Applicable to all non-conformities observed in product, process & system.  </p>
+                <h2>3.	RESPONSIBILITY &nbsp;&nbsp;&nbsp;:  </h2>
+
+                <p style="margin-left:30px;">
+                    Concerned department heads are responsible to implement & maintain this procedure.
+                </p>
+
+                <h2>
+
+                    4.	PROCEDURE   &nbsp;&nbsp;&nbsp;:
+                </h2>
+                <h5 style="margin-left:30px;">
+                    Definition:
+                </h5>
+
+                <p style="margin-left:50px;">
+                    Corrective Action means to eliminate the cause of nonconformities in order to prevent recurrence.
+                </p>
+
+                <h3 style="margin-left:30px;">
+                    4.1  PRODUCT / PROCESS / SYSTEM NON-CONFORMITIES &nbsp;:
+                </h3>
+                <ol style="list-style:lower-alpha; margin-left:40px;">
+                    <li>Whenever any product/process/system non-conformities observed, it is reported in corrective action report, form no. F MR 08. </li>
+                    <li>Concerned department shall review the nature of non-conformity and identify the root cause. </li>
+                    <li>Concerned department shall take necessary actions to correct the detected non-conformity. </li>
+                    <li>Corrective action plan shall be decided based on the available facility with responsibility and target. </li>
+                    <li>Responsible person shall implement the decided actions within the target and result of action taken shall be verified. </li>
+                    <li>Effectiveness of action taken shall be reviewed. The details of non-conformity, root causes, corrective action plan, action taken and effectiveness shall be recorded in corrective action report, form no. F MR 08. </li>
+                </ol>
+
+
+                <table>
+                    <tr>
+                        <th colspan="3" width="35%">Prepared By</th>
+                        <th colspan="3" width="35%">Approved By</th>
+                        <th rowspan="3"></th>
+                    </tr>
+                    <tr>
+                        <td colspan="3" width="35%"></td>
+                        <td colspan="3" width="35%"></td>
+                    </tr>
+                    <tr>
+                        <th colspan="3" width="35%">MR</th>
+                        <th colspan="3" width="35%">PARTNER</th>
+                    </tr>
+
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5" id="pdf-content">
+        <div class="container-box mx-auto p-4">
+            <table>
+                <tr>
+                    <th colspan="2">BLIZZARD CERAMICA LLP</th>
+                    <th colspan="2">PROCEDURE</th>
+                </tr>
+                <tr>
+                    <td colspan="2">Department : MR</td>
+                    <td colspan="2">Doc. No. : PC MR 03</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Subject : Control of documents</td>
+                    <td colspan="2">Rev. No. & Date : 01 / 01.08.2024</td>
+                </tr>
+                <tr>
+                    <td colspan="2">ISO-9001 Clause No. : 7.5.3</td>
+                    <td colspan="2">Page No. : 2 of 2</td>
+                </tr>
+            </table>
+
+            <div class="content">
+                <h3 style="margin-left:30px;">
+                    4.2	CUSTOMER COMPLAINT &nbsp;:
+                </h3>
+                <ol style="list-style:lower-alpha; margin-left:40px;">
+                    <li>
+                        After receipt of complaints from the customer, marketing officer shall acknowledge the same & details of the same shall be recorded in customer complaint register, no. FMK04.
+                    </li>
+                    <li>
+                        Incase complaint is commercial, i.e. related to rates, delivery, excise matter, taxes, quantity, etc. marketing officer shall analyze the same and decide necessary actions in consultation with PARTNER.
+                    </li>
+                    <li>
+                        Incase complaints is technical…
+                    </li>
+                    <br />
+                    <ol>
+                        <li>Marketing officer shall record the details in corrective action report, form no. F MR 08 and hand over to Proprietor.</li>
+                        <li>PARTNER &nbsp; shall carryout the analysis and mentions the result in corrective action report, form no. F MR 08. </li>
+                        <li>Based on the analysis, investigate the causes and decide the corrective action needed to eliminate the cause of non-conformity in corrective action report, form no. F MR 08 and send one copy of the same to marketing officer. Accordingly marketing officer shall give the feedback to customer.  </li>
+                        <li>PARTNER &nbsp; shall make arrangement to implement the decided action and verify the results. The record of implementation & verification shall be recorded in corrective action report, form no. F MR 08. If required by the customer, the same shall be informed.  </li>
+                        <li>PARTNER &nbsp; shall review the effectiveness and keeps the record in corrective action report, form no. F MR 08. </li>
+                        <li>
+                            a flag and stored at designated area. QC supervisor shall verify the same and results are verified with the Final inspection report FQC03. The non-conforming products are handled as per the procedure of control of NC product, doc. no. PCMR06.
+
+                        </li>
+                    </ol>
+                </ol>
+
+                <h2>Reference :</h2>
+                <ol>
+                    <li>Procedure for control of non-conforming product	: PC MR 05</li>
+                </ol>
+                <h2>Records :</h2>
+                <ol>
+                    <li>Corrective Action Report 			: F MR 08</li>
+                    <li>Final inspection Report				: F QC 03</li>
+                    <li>Customer Complaint Register 			: F MK 04</li>
+                </ol>
+
+                <table>
+                    <tr>
+                        <th colspan="3" width="35%">Prepared By</th>
+                        <th colspan="3" width="35%">Approved By</th>
+                        <th rowspan="3"></th>
+                    </tr>
+                    <tr>
+                        <td colspan="3" width="35%"></td>
+                        <td colspan="3" width="35%"></td>
+                    </tr>
+                    <tr>
+                        <th colspan="3" width="35%">MR</th>
+                        <th colspan="3" width="35%">PARTNER</th>
+                    </tr>
+
+
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("downloadPdf").addEventListener("click", () => {
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF("p", "mm", "a4");
+
+                // Get elements to hide
+                const btn = document.getElementById("downloadPdf");
+                const logo = document.getElementById("top-logo");
+
+                // Temporarily hide elements
+                if (btn) btn.style.display = "none";
+                if (logo) logo.style.display = "none";
+
+                pdf.html(document.body, {
+                    callback: function (pdf) {
+                        pdf.save("PCMR07.pdf");
+
+                        // Restore elements after PDF is generated
+                        if (btn) btn.style.display = "block";
+                        if (logo) logo.style.display = "block";
+                    },
+
+                    width: 210, // Full A4 width
+                    windowWidth: 1075 // Adjust scaling
+                });
+            });
+        });
+    </script>
+    <!-- Include jsPDF and html2canvas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</body>
+</html>

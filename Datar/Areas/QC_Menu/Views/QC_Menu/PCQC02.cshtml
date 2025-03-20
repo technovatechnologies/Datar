@@ -1,0 +1,402 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Satisfaction Survey Form</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <!-- Include jsPDF and html2canvas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        @@page {
+            size: A4;
+            margin: 20mm;
+        }
+        /* Print styles */
+        @@media print {
+            body {
+                background-color: #fff;
+            }
+        }
+        body {
+            font-family: 'Cambria Math';
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+            vertical-align: middle;
+            letter-spacing: 1px;
+            white-space: nowrap;
+            word-spacing:  5px;
+        }
+
+
+        th {
+            text-align: center;
+            border: 1px solid black;
+            padding: 8px;
+            vertical-align: middle;
+            word-break: break-word;
+            white-space: normal;
+            overflow-wrap: break-word;
+        }
+
+        .company-title {
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            white-space: nowrap;
+            word-spacing:  5px;
+        }
+
+
+        .header {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .form-table td {
+            font-weight: bold;
+        }
+
+        .survey-table td {
+            text-align: center;
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4 border rounded p-4 bg-light">
+        <!-- Close Button -->
+        <a asp-area="MST_Company" id="top-logo" asp-controller="MST_Company" asp-action="CompanyDetail" class="btn btn-link position-absolute top-0 end-0 m-3 text-dark">
+            <i class="bi bi-x-lg fs-4"></i>
+        </a>
+        <button id="downloadPdf" class="btn btn-primary my-3">Download PDF</button>
+
+        <table class="table table-hover border" id="pdf-content">
+            <tr>
+                <td colspan="3" class="company-title">
+                    BLIZZARD CERAMICA LLP
+                </td>
+                <td colspan="2" class="company-title">
+                    PROCESS CHARTS
+
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    Department : QC
+
+                </td>
+                <td colspan="2">
+                    Doc. No. : PC QC 02
+
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    Process : Calibration
+
+                </td>
+                <td colspan="2">
+                    Rev. No. & Date : 01 /01.08.2024
+
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    ISO 9001-2015 Cl. Ref. : 8.5.2
+
+                </td>
+                <td colspan="2">
+                    Page No. 1 of 1
+
+                </td>
+            </tr>
+            <tr style="height:7vh;">
+                <th>
+                    Sr. No.
+                </th>
+                <th>
+                    Sequence of Activity / Control Method
+
+                </th>
+                <th>
+                    Responsibility
+                </th>
+                <th>
+                    Document reference
+                </th>
+                <th>
+                    Record reference
+                </th>
+            </tr>
+            <tr>
+                <td colspan="5">
+                    <b>
+                        [A] INSTRUMENTS :
+
+                    </b>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    1
+                </td>
+                <td>
+                    To maintain the list of Instruments.
+
+                </td>
+                <td>
+                    QC Supervisor
+
+                </td>
+                <td>
+                    DQC01
+
+                </td>
+                <td>
+                    --
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    2
+                </td>
+                <td>
+                    To define the calibration frequency considering the accuracy required and use of measuring devices in consultation with QC, Production.
+
+
+                </td>
+                <td>
+                    QC Supervisor
+
+                </td>
+                <td>
+                    DQC01
+
+
+                </td>
+                <td>
+                    --
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    3
+                </td>
+                <td>
+                    To identify the measuring devices by unique numbering.
+
+
+                <td>
+                    QC Supervisor
+
+                </td>
+                <td>
+                    DQC01
+
+
+                </td>
+                <td>
+                    --
+
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    4
+                </td>
+                <td>
+                    To collect the measuring instruments as per due date and send it for calibration at outside approved agency or call them for calibration.
+
+                </td>
+                <td>
+                    QC Supervisor
+
+                </td>
+                <td>
+                    --
+
+
+                </td>
+                <td>
+                    --
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    5
+                </td>
+                <td>
+                    To review the calibration result & traceability report received from the agency.
+
+
+                </td>
+                <td>
+                    QC Supervisor
+                </td>
+                <td>
+                    --
+                </td>
+                <td>
+                    Calibration report
+
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    6
+                </td>
+                <td>
+                    To maintain the status of calibration in report as well as on measuring devices.
+
+
+                </td>
+                <td>
+                    QC Supervisor
+                </td>
+                <td>
+                    --
+                </td>
+                <td>
+                    Report
+
+
+                </td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>
+                    All measuring devices are handled properly to avoid damage.
+                </td>
+                <td>
+                    HOD
+                </td>
+                <td>
+                    --
+                </td>
+                <td>
+                    --
+                </td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>
+                    Whenever any measuring devices are found out of calibration OR defective during calibration, decision made by this device are re-verified with calibrated device. Accordingly informed to concern, if required.
+                </td>
+                <td>
+                    QC Supervisor
+                </td>
+                <td>
+                    --
+                </td>
+                <td>
+                    Circular
+                </td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>
+                    Appropriate rust preventive are applied on measuring device to avoid corrosion.
+                </td>
+                <td>
+                    QC Supervisor
+                </td>
+                <td>
+                    --
+                </td>
+                <td>
+                    --
+                </td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>
+                    To maintain the receipt-issue of instruments.
+                </td>
+                <td>
+                    Store Inch.
+                </td>
+                <td>
+                    ---
+                </td>
+                <td>
+                    Challan No
+                </td>
+            </tr>
+            <tr style="height:30vh;">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    Prepared By MR :
+                </td>
+                <td>
+                    Approved by PARTNER :
+                </td>
+                <td colspan="2"></td>
+            </tr>
+
+        </table>
+    </div>
+    <script>
+                document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("downloadPdf").addEventListener("click", () => {
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF("p", "mm", "a4");
+
+                // Get elements to hide
+                const btn = document.getElementById("downloadPdf");
+                const logo = document.getElementById("top-logo");
+
+                // Temporarily hide elements
+                if (btn) btn.style.display = "none";
+                if (logo) logo.style.display = "none";
+
+                html2canvas(document.getElementById("pdf-content")).then(canvas => {
+                    const imgData = canvas.toDataURL("image/png");
+                    const imgWidth = 190; // A4 width in mm
+                    const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+                    pdf.addImage(imgData, "PNG", 10, 10, imgWidth, imgHeight);
+                    pdf.save("PCQC02.pdf");
+
+                    // Restore elements after PDF is generated
+                    if (btn) btn.style.display = "block";
+                    if (logo) logo.style.display = "block";
+                });
+            });
+        });
+
+    </script>
+</body>
+</html>

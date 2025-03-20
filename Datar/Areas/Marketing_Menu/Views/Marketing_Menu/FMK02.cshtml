@@ -1,0 +1,640 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DMR10</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <!-- Include jsPDF and html2canvas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <style>
+        @@page {
+            size: A4;
+            margin: 20mm;
+        }
+        /* Print styles */
+        @@media print {
+            body {
+                background-color: #fff;
+            }
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Cambria Math';
+        }
+
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+            vertical-align: middle;
+            letter-spacing: 1px;
+            white-space: nowrap;
+            word-spacing:  5px;
+        }
+
+
+        th {
+            text-align: center;
+            border: 1px solid black;
+            padding: 8px;
+            vertical-align: middle;
+            word-break: break-word;
+            white-space: normal;
+            overflow-wrap: break-word;
+        }
+
+        .company-title {
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            white-space: nowrap;
+            word-spacing:  5px;
+        }
+
+        .footer-text {
+            font-size: 1rem;
+            font-weight: bold;
+            text-align: left;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4 border rounded p-4 bg-light">
+        <!-- Close Button -->
+        <a asp-area="MST_Company" id="top-logo" asp-controller="MST_Company" asp-action="CompanyDetail" class="btn btn-link position-absolute top-0 end-0 m-3 text-dark">
+            <i class="bi bi-x-lg fs-4"></i>
+        </a>
+        <button id="downloadPdf" class="btn btn-primary my-3">Download PDF</button>
+
+        <!-- Page Title -->
+        <h1 class="text-black">FMK02</h1>
+        <!-- Table -->
+        <table class="table table-hover border" id="pdf-content">
+            <tr>
+                <td colspan="2" class="company-title">BLIZZARD CERAMICA LLP</td>
+                <td colspan="2" class="company-title">CUSTOMER SATISFACTION ANALYSIS REPORT   </td>
+                <td colspan="2">Doc. No.: F MK 02 <br> Rev. No. & Date:</td>
+            </tr>
+            <tr>
+                <td colspan="5">
+                    Survey Period
+                </td>
+                <td style="border-left:hidden;">
+
+                    Date:22/06/2020
+
+                </td>
+            <tr>
+                <td colspan="6">
+                    <p>
+                        <strong>Customer Satisfaction Index (CSI) :</strong> A = Highly satisfied - Above 90%
+                    </p>
+
+                    <p style="margin-left:250px;">
+                        B=Satisfied - Above 80 to 90%
+                    </p>
+
+                    <p style="margin-left:250px;"> C = Needs Improvement - Below 80%</p>
+
+
+
+
+
+            </tr>
+
+
+            <tr colspan="6">
+                <th>Sr.</th>
+                <th>
+                    DescriptionCustomer's Name
+                </th>
+                <th>
+                    Observed Value (OV)
+                </th>
+                <th>
+                    Total Value (TV)
+
+                </th>
+                <th>
+                    CSI = (OV/TV)*100 =<br /> ……………%
+                </th>
+                <th>
+                    Remarks
+                </th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>
+                    PT.TRUST TRADING INDONESIA
+                </td>
+                <td>
+                    33
+                </td>
+                <td>
+                    33
+                </td>
+                <td>
+                    100.00
+                </td>
+                <td></td>
+
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>
+                    PT.SURYA BANGUNAN SEMESTA
+                </td>
+                <td>
+                    32
+                </td>
+                <td>
+                    33
+                </td>
+                <td>
+                    96.97
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>
+                    PT.CHIVAS INTERNUSA
+                </td>
+                <td>
+                    33
+                </td>
+                <td>
+                    33
+                </td>
+                <td>
+                    100.00
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>
+                    ASIAN GRANITO INDIA LIMITED
+                </td>
+                <td>
+                    31
+                </td>
+                <td>
+                    33
+                </td>
+                <td>
+                    93.94
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>
+                    ARAVIND CERAMIC PVT LTD
+
+                </td>
+                <td>
+                    32
+                </td>
+                <td>
+                    33
+                </td>
+                <td>
+                    96.97
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>
+                    NITCO  LIMITED
+
+                </td>
+                <td>
+                    32
+                </td>
+                <td>
+                    33
+                </td>
+                <td>
+                    96.97
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>
+                    CERAMIC ZONE
+
+                </td>
+                <td>
+                    31
+                </td>
+                <td>
+                    33
+                </td>
+                <td>
+                    93.94
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>
+                    R.L. CERAMICS
+
+                </td>
+                <td>
+                    31
+                </td>
+                <td>
+                    33
+                </td>
+                <td>
+                    93.94
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>
+                    MANIPUR BUILD MART
+
+
+                </td>
+                <td>
+                    31
+                </td>
+                <td>
+                    33
+                </td>
+                <td>
+                    93.94
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>
+                    JAY MARKETING
+
+                </td>
+                <td>
+                    32
+                </td>
+                <td>
+                    33
+                </td>
+                <td>
+                    96.97
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>
+                    SUN CORPORATION
+
+                </td>
+                <td>
+                    32
+                </td>
+                <td>
+                    33
+                </td>
+                <td>
+                    96.97
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>
+                    FONTIBRE CERAMICAS S.A. DE C.V.
+
+                </td>
+                <td>32</td>
+                <td>33</td>
+                <td> 96.97</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>13</td>
+                <td>
+                    BHAGWATI EXIM
+                </td>
+                <td>
+                    31
+                </td>
+                <td>
+                    33
+                </td>
+                <td>
+                    93.94
+
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>
+                    JAGDAMBA INTERNATIONAL
+
+                </td>
+                <td>
+                    32
+                </td>
+                <td>
+                    33
+                </td>
+                <td>
+                    96.97
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>
+                    NILKANTH MARKETING
+
+                </td>
+                <td>
+                    31
+                </td>
+                <td>
+                    33
+                </td>
+                <td>
+                    93.94
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td>
+                    AMAZOONE CERAMICS LIMITED
+
+                </td>
+                <td>
+                    32
+                </td>
+                <td>
+                    33
+                </td>
+                <td>
+                    96.97
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td>
+                    AMJ SALES PRIVATE LIMITED
+
+
+                </td>
+                <td>
+                    32
+                </td>
+                <td>
+                    33
+                </td>
+                <td>
+                    96.97
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>18</td>
+                <td>
+                    AJAY ENTERPRISES
+
+                </td>
+                <td>
+                    31
+
+                </td>
+                <td>
+                    33
+
+                </td>
+                <td>
+                    93.94
+
+                </td>
+                <td></td>
+            </tr>
+            <tr style="height:5vh;">
+                <td></td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td></td>
+            </tr>
+            <tr style="height:5vh;">
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                    AVERAGE
+
+                </td>
+                <td>
+                    96.13
+
+                </td>
+                <td></td>
+            </tr>
+            <tr style="height:5vh;">
+                <td></td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td></td>
+            </tr>
+            <tr style="height:5vh;">
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td></td>
+            </tr>
+            <tr style="height:5vh;">
+                <td></td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td></td>
+            </tr>
+            <tr style="height:5vh;">
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td></td>
+            </tr>
+            <tr style="height:5vh;">
+                <td></td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td></td>
+            </tr>
+            <tr style="height:5vh;">
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td></td>
+            </tr>
+            <tr style="height:5vh;">
+                <td></td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td></td>
+            </tr>
+            <tr style="height:5vh;">
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td></td>
+            </tr>
+            <tr style="height:5vh;">
+                <td></td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td></td>
+            </tr>
+            <tr style="height:5vh;">
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td></td>
+            </tr>
+
+
+
+
+        </table>
+    </div>
+    <script>
+              document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("downloadPdf").addEventListener("click", () => {
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF("p", "mm", "a4");
+
+                // Get elements to hide
+                const btn = document.getElementById("downloadPdf");
+                const logo = document.getElementById("top-logo");
+
+                // Temporarily hide elements
+                if (btn) btn.style.display = "none";
+                if (logo) logo.style.display = "none";
+
+                html2canvas(document.getElementById("pdf-content")).then(canvas => {
+                    const imgData = canvas.toDataURL("image/png");
+                    const imgWidth = 190; // A4 width in mm
+                    const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+                    pdf.addImage(imgData, "PNG", 10, 10, imgWidth, imgHeight);
+                    pdf.save("FMK02.pdf");
+
+                    // Restore elements after PDF is generated
+                    if (btn) btn.style.display = "block";
+                    if (logo) logo.style.display = "block";
+                });
+            });
+        });
+
+    </script>
+</body>
+</html> 

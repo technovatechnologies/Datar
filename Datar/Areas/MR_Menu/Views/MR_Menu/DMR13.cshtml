@@ -1,0 +1,440 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="widtd=device-widtd, initial-scale=1.0">
+    <title>DMR13</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <!-- Include jsPDF and html2canvas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        @@page {
+            size: A4;
+            margin: 20mm;
+        }
+        /* Print styles */
+        @@media print {
+            body {
+                background-color: #fff;
+            }
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Cambria Math';
+        }
+
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+            vertical-align: middle;
+        }
+
+
+        th {
+            text-align: center;
+            border: 1px solid black;
+            padding: 8px;
+            vertical-align: middle;
+            word-break: break-word;
+            white-space: normal;
+            overflow-wrap: break-word;
+        }
+
+        .company-title {
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            white-space: nowrap;
+            word-spacing:  5px;
+        }
+
+        .footer-text {
+            font-size: 1rem;
+            font-weight: bold;
+            text-align: left;
+            padding: 10px;
+        }
+
+        .no-left-border {
+            border-left: hidden !important;
+        }
+
+        .no-top-border td {
+            border-top: hidden !important;
+        }
+
+        .top-left {
+            vertical-align: top; /* Align text to the top */
+            text-align: left; /* Align text to the left */
+            padding: 5px; /* Optional: Add some padding */
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4 border rounded p-4 bg-light">
+        <!-- Close Button -->
+        <a asp-area="MST_Company" id="top-logo" asp-controller="MST_Company" asp-action="CompanyDetail" class="btn btn-link position-absolute top-0 end-0 m-3 text-dark">
+            <i class="bi bi-x-lg fs-4"></i>
+        </a>
+        <button id="downloadPdf" class="btn btn-primary my-3">Download PDF</button>
+        <!-- Page Title -->
+        <h1 class="text-black">DMR13</h1>
+        <!-- Table -->
+        <table class="table table-hover border" id="pdf-content">
+            <tr style="height:5vh">
+                <td colspan="2" class="company-title">BLIZZARD CERAMICA LLP</td>
+                <td colspan="2" class="company-title" style="width:30%;">
+                    LIST OF INTRESTED PARTIES
+
+                </td>
+                <td colspan="2">Doc. No. : D MR 13 <br /> Rev. No. & Date :</td>
+
+            </tr>
+            <tr>
+                <th>
+                    Sr.No.
+                </th>
+                <th >
+                    Interested parties
+                </th>
+                <th>
+                    Need
+                </th>
+                <th>
+                    Monitoring
+                </th>
+                <th>
+                    Expectation
+                </th>
+                <th>
+                    Remark
+                </th>
+            </tr>
+            <tr >
+                <td rowspan="5">1</td>
+                <td rowspan="5">Top Management</td>
+                <td>Run smoothly and grow and profit from investment</td>
+                <td>
+                    Profit and loss end of the year
+                </td>
+                <td>
+                    Low cost Higher profit
+                </td>
+                <td></td>
+            </tr>
+            <tr >
+
+                <td>Achieve Objective, Goal, Target</td>
+                <td>
+                    MRM
+                </td>
+                <td>
+                    To be ready for future challenges
+                </td>
+                <td></td>
+            </tr>
+            <tr >
+
+                <td>
+                    Follow all role and regulation as defined by government.
+                </td>
+                <td>-</td>
+                <td>
+                    Equal opportunity to grow across the organization
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+
+                <td>
+                    On time resources fulfil to Internal and external interested parties
+                </td>
+                <td>-</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+
+                <td>
+                    Optimum utilization of resource in achieve higher level of activity
+                </td>
+                <td>
+                    Monthly profitability of the organization
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td rowspan="5">2</td>
+                <td rowspan="5">Customert</td>
+                <td>
+                    Quality product as per provide specification in particular
+                </td>
+                <td>
+                    Customer Complaint
+                </td>
+                <td>
+                    Technical support new development
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+
+                <td>
+                    On time delivery as agreed
+                </td>
+                <td>
+                    Customer order monitoring
+                </td>
+                <td rowspan="4">
+                    Value added services like to way communication, stocking facility, special packaging to increase productivity at customer end., reduce lead time. Material Delivery at customer end.
+
+
+
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+
+                <td>
+                    Payment terms and credit as per agreed by both parties
+                </td>
+                <td>-</td>
+                <td></td>
+            </tr>
+            <tr style="height:2vh;">
+
+                <td></td>
+                <td></td>
+
+                <td></td>
+            </tr>
+            <tr style="height:2vh;">
+
+                <td>
+                    Document requirement
+                </td>
+                <td>
+                    Customer satisfaction survey
+                </td>
+
+                <td></td>
+            </tr>
+            <tr>
+                <td rowspan="4">3</td>
+                <td rowspan="4">Employee</td>
+                <td>
+                    Resources and good environment to performing daily activity as assign by organization
+                </td>
+                <td>
+                    -
+                </td>
+                <td>
+                    Higher salary and share from profit
+
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+
+                <td>
+                    In time salary
+                </td>
+                <td>
+                    Salary register
+
+                </td>
+                <td>
+                    Personnel development and stares reliving job
+
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+
+                <td>
+                </td>
+                <td></td>
+                <td>
+                    Job security
+
+                </td>
+                <td>
+                </td>
+            </tr>
+            <tr >
+
+                <td>
+                </td>
+                <td></td>
+                <td>
+                    Training to personnel skill improve
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td rowspan="2">
+                    4
+
+                </td>
+                <td rowspan="2">
+                    External Provider
+
+                </td>
+                <td>
+                    Long term business relationship
+
+                </td>
+                <td>
+                    Approved External provider list
+
+                </td>
+                <td>
+                    Financial support whenever required
+
+
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+
+                <td>
+                    Timely Payment
+
+                </td>
+                <td>
+                    Account data
+
+
+                </td>
+                <td>
+                    Technical Support
+
+
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td rowspan="4">
+                    5
+
+
+
+                </td>
+                <td rowspan="4">
+                    Government
+
+
+
+                </td>
+                <td>
+                    Maintain, display and retain all certificate
+
+                </td>
+                <td>
+                    -
+                </td>
+                <td>
+                    Provide documentation error free
+
+
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+
+                <td>
+                    Timely summation of documents related to all departments
+
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+
+                <td>
+                    Communicating / inform any changes related to organization structure
+
+                </td>
+                <td>
+                    MRM
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+            </tr>
+            <tr style="height:2vh">
+
+                <td>
+                </td>
+                <td></td>
+                <td>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td rowspan="4">6</td>
+                <td rowspan="4">Banker and Finance</td>
+                <td rowspan="2" >On time payments of interest and loan payment</td>
+                <td rowspan="2">Accounting data</td>
+                <td rowspan="3">Updating changes of the organization</td>
+                <td>-</td>
+
+            </tr>
+            <tr>
+                <td rowspan="2">Mail / Report / Verbally</td>
+            </tr>
+            <tr>
+                <td rowspan="2" > <br /><br /><br />Timely summation of audited data for renewals.</td>
+                <td rowspan="2"><br /><br /><br />Reports</td>
+
+            </tr>
+            <tr>
+                <td>Relationship</td>
+                <td>Continuity of work</td>
+            </tr>
+        </table>
+
+    </div>
+    <script>
+                document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("downloadPdf").addEventListener("click", () => {
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF("p", "mm", "a4");
+
+                // Get elements to hide
+                const btn = document.getElementById("downloadPdf");
+                const logo = document.getElementById("top-logo");
+
+                // Temporarily hide elements
+                if (btn) btn.style.display = "none";
+                if (logo) logo.style.display = "none";
+
+                html2canvas(document.getElementById("pdf-content")).then(canvas => {
+                    const imgData = canvas.toDataURL("image/png");
+                    const imgWidth = 190; // A4 width in mm
+                    const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+                    pdf.addImage(imgData, "PNG", 10, 10, imgWidth, imgHeight);
+                    pdf.save("DMR13.pdf");
+
+                    // Restore elements after PDF is generated
+                    if (btn) btn.style.display = "block";
+                    if (logo) logo.style.display = "block";
+                });
+            });
+        });
+
+    </script>
+</body>
+</html> 

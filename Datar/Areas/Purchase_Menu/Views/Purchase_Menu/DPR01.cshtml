@@ -1,0 +1,527 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DMR10</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <!-- Include jsPDF and html2canvas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Cambria Math';
+        }
+
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+            vertical-align: middle;
+        }
+
+
+        th {
+            text-align: center;
+            border: 1px solid black;
+            padding: 8px;
+            vertical-align: middle;
+            word-break: break-word;
+            white-space: normal;
+            overflow-wrap: break-word;
+        }
+
+        .company-title {
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            white-space: nowrap;
+            word-spacing:  5px;
+        }
+
+        .doc-title {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .footer-text {
+            font-size: 1rem;
+            font-weight: bold;
+            text-align: left;
+            padding: 10px;
+        }
+
+        @@page {
+            size: A4;
+            margin: 20mm;
+        }
+        /* Print styles */
+        @@media print {
+            body {
+                background-color: #fff;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4 border rounded p-4 bg-light">
+        <!-- Close Button -->
+        <a asp-area="MST_Company" id="top-logo" asp-controller="MST_Company" asp-action="CompanyDetail" class="btn btn-link position-absolute top-0 end-0 m-3 text-dark">
+            <i class="bi bi-x-lg fs-4"></i>
+        </a>
+        <button id="downloadPdf" class="btn btn-primary my-3">Download PDF</button>
+        <!-- Page Title -->
+        <h1 class="text-black">PCPR01</h1>
+        <!-- Table -->
+        <table class="table table-hover border" id="pdf-content">
+            <tr>
+                <td colspan="2" class="company-title">BLIZZARD CERAMICA LLP</td>
+                <td colspan="2" class="company-title">
+                    LIST OF APPROVED SUPPLIERS
+                </td>
+                <td colspan="3">
+                    Doc. No.    :   D PR 01
+                    <br> Rev. No. & Date: 01/01.08.2024
+                </td>
+            </tr>
+            <tr>
+                <th style="width:6%;" rowspan="2">Sr.<br /> No.</th>
+                <th rowspan="2">Supplier's Name, Address, Tel. No. &<br /> Contact Person</th>
+                <th rowspan="2">Code No.</th>
+                <th rowspan="2">Item / Service <br /> Supplied</th>
+                <th rowspan="2">Basis of <br /> Approval</th>
+                <th colspan="2">
+                    Approved
+                </th>
+            <tr>
+                <th>
+                    On
+                </th>
+                <th>
+                    PARTNER
+                </th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>OM TILES & MINERALS</td>
+                <td></td>
+                <td>SODA & POTASH <br /> CLAY</td>
+                <td>PAST <br /> EXPERIENCE</td>
+                <td>01.08.24</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>
+                    2
+                </td>
+                <td>
+                    SHIVAY &nbsp;  MINERALS
+                </td>
+                <td></td>
+                <td>
+                    ZALOR
+                </td>
+                <td>PAST <br /> EXPERIENCE</td>
+                <td>01.08.24</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>
+                    3
+                </td>
+                <td>
+                    MARUTI &nbsp; MICRONS
+                </td>
+                <td></td>
+                <td>
+                    WASH SODA
+                </td>
+                <td>PAST <br /> EXPERIENCE</td>
+                <td>01.08.24</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>
+                    4
+                </td>
+                <td>
+                    S K MINERALS
+                </td>
+                <td></td>
+                <td>
+                    RAZ,MOR CLAY
+                </td>
+                <td>PAST <br /> EXPERIENCE</td>
+                <td>01.08.24</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>5</td>
+                <td>
+                    GLAZE &nbsp; STUDIO &nbsp; LLP
+                </td>
+                <td></td>
+                <td>
+                    GLAZE
+                </td>
+                <td>PAST <br /> EXPERIENCE</td>
+                <td>01.08.24</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>6</td>
+                <td>
+                    SMALTICERAM &nbsp; INDIA &nbsp; PVT. &nbsp; LTD
+                </td>
+                <td></td>
+                <td>
+                    GLAZE
+                </td>
+                <td>PAST <br /> EXPERIENCE</td>
+                <td>01.08.24</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>7</td>
+                <td>
+                    KRISHNA &nbsp; COLOUR &nbsp; CHEM
+                </td>
+                <td></td>
+                <td>SODA & POTASH <br /> CLAY</td>
+                <td>PAST <br /> EXPERIENCE</td>
+                <td>01.08.24</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>8</td>
+                <td>
+                    SLCERA &nbsp; INDIA &nbsp; PVT &nbsp; LTD
+                </td>
+                <td></td>
+                <td>
+                    INK
+                </td>
+                <td>PAST <br /> EXPERIENCE</td>
+                <td>01.08.24</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>9</td>
+                <td>
+                    RAJIV &nbsp; CERA &nbsp; IMPEX
+                </td>
+                <td></td>
+                <td>
+                    STPP FOR GLAZE,CMC
+                </td>
+                <td>PAST <br /> EXPERIENCE</td>
+                <td>01.08.24</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>10</td>
+                <td>
+                    AGARVAL &nbsp; COOL &nbsp; CORPORATION &nbsp; PVT &nbsp; LTD
+                </td>
+                <td></td>
+                <td>
+                    COAL
+                </td>
+                <td>PAST <br /> EXPERIENCE</td>
+                <td>01.08.24</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>11</td>
+                <td>
+                    ANJANI &nbsp; ENTERPRISE
+                </td>
+                <td></td>
+                <td>
+                    COAL
+                </td>
+                <td>PAST <br /> EXPERIENCE</td>
+                <td>01.08.24</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>12</td>
+                <td>
+                    COLOROBBIA &nbsp; CHEMICALS &nbsp; INDIA &nbsp; PVT LTD
+                </td>
+                <td></td>
+                <td>SODA & POTASH <br /> CLAY</td>
+                <td>
+                    GLAZE
+                </td>
+                <td>01.08.24</td>
+                <td></td>
+
+            <tr>
+                <td>13</td>
+                <td>
+                    HARISUN &nbsp; INDUSTRIES
+                </td>
+                <td></td>
+                <td>
+                    PAPER
+                </td>
+                <td>PAST <br /> EXPERIENCE</td>
+                <td>01.08.24</td>
+                <td></td>
+
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>
+                    NEYUS &nbsp; INTERNATIONAL
+
+                </td>
+                <td></td>
+                <td>
+                    SLS
+
+                </td>
+                <td>PAST <br /> EXPERIENCE</td>
+                <td>01.08.24</td>
+                <td></td>
+
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>
+                    SHREE &nbsp; RAM &nbsp; ENTERPRICE
+
+                </td>
+                <td></td>
+                <td>
+                    HAZELWARE
+
+                </td>
+                <td>PAST <br /> EXPERIENCE</td>
+                <td>01.08.24</td>
+                <td></td>
+
+            </tr>
+            <tr>
+                <td>16</td>
+                <td>
+                    SHREE &nbsp; RAM &nbsp; ENTERPRICE
+
+                </td>
+                <td></td>
+                <td>
+                    NANO CHEMICAL
+
+                </td>
+                <td>PAST <br /> EXPERIENCE</td>
+                <td>01.08.24</td>
+                <td></td>
+
+            </tr>
+            <tr>
+                <td>17</td>
+                <td>
+                    URBAN &nbsp; PRINT &nbsp; PACK
+
+                </td>
+                <td></td>
+                <td>
+                    BOX
+
+                </td>
+                <td>PAST <br /> EXPERIENCE</td>
+                <td>01.08.24</td>
+                <td></td>
+
+            </tr>
+            <tr>
+                <td>18</td>
+                <td>
+                    ZEEL &nbsp; PACK &nbsp; PRINT &nbsp; PACK
+
+                </td>
+                <td></td>
+                <td>
+                    BOX
+
+                </td>
+                <td>PAST <br /> EXPERIENCE</td>
+                <td>01.08.24</td>
+                <td></td>
+
+            </tr>
+            <tr>
+                <td>19</td>
+                <td>
+                    HINDUSTAN &nbsp; MINERALS
+
+                </td>
+                <td></td>
+                <td>
+                    SODA
+
+                </td>
+                <td>PAST <br /> EXPERIENCE</td>
+                <td>01.08.24</td>
+                <td></td>
+
+            </tr>
+            <tr>
+                <td>20</td>
+                <td>
+                    FLORICE &nbsp; POLYCHEM &nbsp; &nbsp; LLP
+
+                </td>
+                <td></td>
+                <td>
+                    PAPER
+                </td>
+                <td>
+                    BINDER
+                </td>
+                <td>01.08.24</td>
+                <td></td>
+
+            </tr>
+            <tr style="height:5vh;">
+                <td></td>
+                <td> </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td style="width:10%"></td>
+            </tr>
+            <tr style="height:5vh;">
+                <td></td>
+                <td> </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td style="width:10%"></td>
+            </tr>
+            <tr style="height:5vh;">
+                <td></td>
+                <td> </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td style="width:10%"></td>
+            </tr>
+            <tr style="height:5vh;">
+                <td></td>
+                <td> </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td style="width:10%"></td>
+            </tr>
+            <tr style="height:5vh;">
+                <td></td>
+                <td> </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td style="width:10%"></td>
+            </tr>
+            <tr style="height:5vh;">
+                <td></td>
+                <td> </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td style="width:10%"></td>
+            </tr>
+            <tr style="height:5vh;">
+                <td></td>
+                <td> </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td style="width:10%"></td>
+            </tr>
+            <tr style="height:5vh;">
+                <td></td>
+                <td> </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td style="width:10%"></td>
+            </tr>
+            <tr style="height:5vh;">
+                <td></td>
+                <td> </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td style="width:10%"></td>
+            </tr>
+            <tr style="height:5vh;">
+                <td></td>
+                <td> </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+    <script>
+                document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("downloadPdf").addEventListener("click", () => {
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF("p", "mm", "a4");
+
+                // Get elements to hide
+                const btn = document.getElementById("downloadPdf");
+                const logo = document.getElementById("top-logo");
+
+                // Temporarily hide elements
+                if (btn) btn.style.display = "none";
+                if (logo) logo.style.display = "none";
+
+                html2canvas(document.getElementById("pdf-content")).then(canvas => {
+                    const imgData = canvas.toDataURL("image/png");
+                    const imgWidth = 190; // A4 width in mm
+                    const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+                    pdf.addImage(imgData, "PNG", 10, 10, imgWidth, imgHeight);
+                    pdf.save("DPR01.pdf");
+
+                    // Restore elements after PDF is generated
+                    if (btn) btn.style.display = "block";
+                    if (logo) logo.style.display = "block";
+                });
+            });
+        });
+
+    </script>
+</body>
+</html>
